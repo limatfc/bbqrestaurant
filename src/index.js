@@ -1,12 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
-import TasksProvider from "./store/tasks-provider";
 import App from "./App";
+import { DataProvider } from "./store/DataProvider";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <TasksProvider>
-    <App />
-  </TasksProvider>
+  <DataProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </DataProvider>
 );

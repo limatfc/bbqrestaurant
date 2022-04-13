@@ -1,0 +1,7 @@
+/* base */
+
+/* screens */
+@import "./screens/Home.css";
+
+/* components */
+@import "./components/CategoryCard.css";
