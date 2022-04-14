@@ -1,0 +1,6 @@
+.expanded-wrapper {
+  position: absolute;
+  background-color: black;
+  z-index: 10;
+  height: 100%;
+}
