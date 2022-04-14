@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function CategoryCard({ item }) {
   const navigate = useNavigate();
-  const { description, imageDescription, imageURL, name } = item;
+  const { description, imageDescription, imageURL, name, URLName } = item;
 
   function onClickHandler() {
-    navigate(`/menu/${name}`);
+    navigate(`/menu/${URLName}`);
   }
 
   return (
