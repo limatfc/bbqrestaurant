@@ -3,12 +3,13 @@ import useReadData from "../../hooks/useReadData";
 import useDataProvider from "../../store/useDataProvider";
 import ProductCard from "../../components/client/ProductCard";
 import Loading from "./Loading";
+import Error from "./Error";
 
 export default function Category() {
   const { category } = useParams();
   const dataContext = useDataProvider();
   const { productsHandler, products, categories } = dataContext;
-  const { status } = useReadData(productsHandler, `/menu/${category}/content`);
+  const { status } = useReadData(productsHandler, `menu/${category}/content`);
   const categoryFind = categories.find((item) => category === item.URLName);
 
   const productCards = products.map((item) => (
@@ -16,11 +17,12 @@ export default function Category() {
   ));
 
   if (status === 0) return <Loading />;
+  if (!categoryFind) return <Error />;
 
   return (
     <div>
       <h2>{categoryFind.name}</h2>
-      <p>{categoryFind.description}</p>
+      <p>{categoryFind.shortDescription}</p>
       <div>{productCards}</div>
     </div>
   );
