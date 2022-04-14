@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useReadData from "../../hooks/useReadData";
 import useDataProvider from "../../store/useDataProvider";
 import ProductCard from "../../components/client/ProductCard";
@@ -24,6 +24,7 @@ export default function Category() {
       <h2>{categoryFind.name}</h2>
       <p>{categoryFind.shortDescription}</p>
       <div>{productCards}</div>
+      <Link to="/menu">Go back</Link>
     </div>
   );
 }
