@@ -1,18 +1,23 @@
-import { Link } from "react-router-dom";
-import logo from "../../assets/icons/logo.png";
-import menuIcon from "../../assets/icons/menu.png";
+import { useState } from "react";
+import NavigationBarDesktop from "./NavigationBarDesktop";
+import NavigationBarMobile from "./NavigationBarMobile";
+
+import NavigationBarMobileExpanded from "./NavigationBarMobileExpanded";
 
 export default function NavigationBar() {
+  const [showSideNav, setShowSideNav] = useState(false);
+
+  function toggleSideNav() {
+    setShowSideNav(!showSideNav);
+  }
+
   return (
-    <section>
-      <img
-        src={logo}
-        alt="a white cowboy hat besides the writing 'Flaming Cowboy'"
-      />
-      <img src={menuIcon} alt="three horizontal lines stacked" />
-      <Link to="/">Home</Link>
-      <Link to="/menu">Menu</Link>
-      <Link to="/contact">Contact</Link>
-    </section>
+    <div className="navigation-bar">
+      <NavigationBarDesktop />
+      <NavigationBarMobile toggleSideNav={toggleSideNav} />
+      {showSideNav && (
+        <NavigationBarMobileExpanded toggleSideNav={toggleSideNav} />
+      )}
+    </div>
   );
 }
