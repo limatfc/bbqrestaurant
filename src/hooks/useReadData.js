@@ -6,15 +6,9 @@ export default function useReadData(updateContextStateFunction, path) {
 
   const readData = useCallback(
     async (updateContextStateFunction) => {
-      try {
-        const collectionCategories = await getCollection(path);
-        updateContextStateFunction(collectionCategories);
-        setStatus(1);
-      } catch (error) {
-        setStatus(2);
-        const errorMessage = `Ops, it looks like there was a problem retrieving data from the database. The error is ${error.message}`;
-        console.error(errorMessage);
-      }
+      const collectionCategories = await getCollection(path);
+      updateContextStateFunction(collectionCategories);
+      setStatus(1);
     },
     [path]
   );

@@ -1,13 +1,11 @@
-import useReadData from "../../hooks/useReadData";
 import useDataProvider from "../../store/useDataProvider";
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "../../components/client/CategoryCard";
 import Error from "./Error";
 import Loading from "./Loading";
 
-export default function Menu() {
+export default function Menu({ status }) {
   const dataContext = useDataProvider();
-  const { categoriesHandler, categories } = dataContext;
-  const { status } = useReadData(categoriesHandler, "categories");
+  const { categories } = dataContext;
 
   const categoryCards = categories.map((item) => (
     <CategoryCard key={item.id} item={item} />
