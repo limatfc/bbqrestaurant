@@ -1,11 +1,11 @@
 import useReadData from "../../hooks/useReadData";
-import useData from "../../store/useData";
+import useDataProvider from "../../store/useDataProvider";
 import CategoryCard from "./CategoryCard";
 import Error from "./Error";
 import Loading from "./Loading";
 
 export default function Menu() {
-  const dataContext = useData();
+  const dataContext = useDataProvider();
   const { categoriesHandler, categories } = dataContext;
   const { status } = useReadData(categoriesHandler, "categories");
 

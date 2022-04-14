@@ -9,9 +9,9 @@ export function DataProvider({ children }) {
     setCategories(fetchedData);
   }, []);
 
-  function productsHandler(fetchedData) {
+  const productsHandler = useCallback((fetchedData) => {
     setProducts(fetchedData);
-  }
+  }, []);
 
   const dataProvider = {
     categories,
