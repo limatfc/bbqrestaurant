@@ -1,0 +1,7 @@
+@import "./typography.css";
+
+html,
+body {
+  margin: 0;
+  font-family: "Mukta";
+}
