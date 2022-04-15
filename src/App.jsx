@@ -11,6 +11,8 @@ import Error from "./screens/clients/Error";
 import Product from "./screens/clients/Product";
 import Login from "./screens/admin/Login";
 import AdminHome from "./screens/admin/AdminHome";
+import "./styles/Styles.css";
+import CategoryInfo from "./screens/admin/CategoryInfo";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -29,6 +31,9 @@ export default function App() {
         <Route path="*" element={<Error />} />
         <Route path="/login" element={<Login />} />
         {isLoggedIn && <Route path="/admin-home" element={<AdminHome />} />}
+        {isLoggedIn && (
+          <Route path="/category-edit/:category" element={<CategoryInfo />} />
+        )}
       </Routes>
       <Footer />
     </div>

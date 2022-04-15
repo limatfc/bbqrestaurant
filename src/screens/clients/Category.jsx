@@ -10,6 +10,7 @@ export default function Category() {
   const dataContext = useDataProvider();
   const { productsHandler, products, categories } = dataContext;
   const { status } = useReadData(productsHandler, `menu/${category}/content`);
+
   const categoryFind = categories.find((item) => category === item.URLName);
 
   const productCards = products.map((item) => (

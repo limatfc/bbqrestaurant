@@ -9,7 +9,6 @@ export default function Product() {
   const navigate = useNavigate();
   const dataContext = useDataProvider();
   const { productsHandler, products } = dataContext;
-
   const { status } = useReadData(productsHandler, `menu/${category}/content/`);
 
   const findProduct = products.find((item) => item.URLName === product);

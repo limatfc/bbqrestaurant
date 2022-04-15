@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getCollection } from "../scripts/firebase/fireStore";
+import { getCollection } from "../scripts/firebase/getCollection";
 
 export default function useReadData(updateContextStateFunction, path) {
   const [status, setStatus] = useState(0); //
