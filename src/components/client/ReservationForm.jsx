@@ -3,7 +3,11 @@ import "react-calendar/dist/Calendar.css";
 import data from "../../data/contact.json";
 
 export default function ReservationForm() {
-  const options = data.map((item) => <option value={item}>{item}</option>);
+  const options = data.map((item) => (
+    <option key={item} value={item}>
+      {item}
+    </option>
+  ));
 
   return (
     <form>
