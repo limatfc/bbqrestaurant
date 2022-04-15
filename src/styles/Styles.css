@@ -1,4 +1,6 @@
 /* base */
+@import "./base/colors.css";
+@import "./base/layout.css";
 
 /* screens */
 @import "./screens/Home.css";
