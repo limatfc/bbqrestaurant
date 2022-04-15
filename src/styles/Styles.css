@@ -8,4 +8,4 @@
 /* components */
 @import "./components/CategoryCard.css";
 @import "./components/NavigationBar.css";
-@import "../styles/components/NavigationBarMobileExpanded.css";
+@import "../styles/components/NavigationBarOverlayer.css";
