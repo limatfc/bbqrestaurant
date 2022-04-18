@@ -18,6 +18,14 @@ export function DataProvider({ children }) {
     setIsLoggedIn(!isLoggedIn);
   }
 
+  function editCategory(id, inputedData) {
+    const categoryCopy = [...categories];
+    inputedData.id = id;
+    let findIndex = categoryCopy.findIndex((item) => item.id === id);
+    categoryCopy.splice(findIndex, 1, inputedData);
+    setCategories(categoryCopy);
+  }
+
   const dataProvider = {
     categories,
     products,
@@ -25,6 +33,7 @@ export function DataProvider({ children }) {
     categoriesHandler,
     productsHandler,
     loginHandler,
+    editCategory,
   };
 
   return (
