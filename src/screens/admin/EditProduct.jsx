@@ -24,7 +24,8 @@ export default function EditProduct() {
   function formHandler() {
     setShowForm(!showForm);
   }
-  console.log(ingredients);
+  const ingredient = ingredients.map((item) => <li>{item}</li>);
+
   return (
     <div>
       <h3>Product information:</h3>
@@ -35,7 +36,9 @@ export default function EditProduct() {
         <li>Product short description: {shortDescription}</li>
         <li>Image Description: {imageDescription}</li>
         <li>Image URL: {imageURL}</li>
-        <li>Ingredients: {ingredients}</li>
+        <li>
+          Ingredients: <ul>{ingredient}</ul>
+        </li>
       </ul>
       <button onClick={formHandler}>Edit product information</button>
       {showForm && (
@@ -46,7 +49,7 @@ export default function EditProduct() {
         />
       )}
       <button onClick={() => navigate(`/edit-category/${category}`)}>
-        Cancel
+        Go back
       </button>
     </div>
   );

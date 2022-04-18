@@ -14,8 +14,15 @@ export default function ProductEditForm({ find, category, formHandler }) {
   const { editProduct } = useDataProvider();
   const { id, URLName } = find;
 
+  function ingredientsHandler(item) {
+    const oneString = [item];
+    const multipleStrings = oneString[0].split(",");
+    setIngredients(multipleStrings);
+  }
+
   function onSubmitHandler(event) {
     event.preventDefault();
+
     const inputedData = {
       name: name,
       price: price,
@@ -23,9 +30,8 @@ export default function ProductEditForm({ find, category, formHandler }) {
       shortDescription: shortDescription,
       imageURL: imageURL,
       imageDescription: imageDescription,
-      ingredients: [ingredients],
+      ingredients: ingredients,
     };
-
     editDocument(`menu/${category}/content`, id, inputedData);
     editProduct(id, inputedData, URLName);
     formHandler();
@@ -35,6 +41,7 @@ export default function ProductEditForm({ find, category, formHandler }) {
     <form onSubmit={onSubmitHandler}>
       <InputField label="Name" setter={setName} />
       <InputField label="Price" setter={setPrice} />
+      <InputField label="Ingredients" setter={ingredientsHandler} />
       <InputField
         label="Product long description"
         setter={setlongDescription}
@@ -43,7 +50,6 @@ export default function ProductEditForm({ find, category, formHandler }) {
         label="Product short description"
         setter={setShortDescription}
       />
-      <InputField label="Ingredients" setter={setIngredients} />
       <InputField label="Image URL" setter={setImageURL} />
       <InputField label="Image description" setter={setImageDescription} />
       <button>Confirm changes</button>
