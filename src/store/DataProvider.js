@@ -26,6 +26,20 @@ export function DataProvider({ children }) {
     setCategories(categoryCopy);
   }
 
+  function addCategory(id, inputedData) {
+    const categoryCopy = [...categories];
+    inputedData.id = id;
+    categoryCopy.push(inputedData);
+    setCategories(categoryCopy);
+  }
+
+  function deleteCategory(id) {
+    const categoryCopy = [...categories];
+    let findIndex = categoryCopy.findIndex((item) => item.id === id);
+    categoryCopy.splice(findIndex, 1);
+    setCategories(categoryCopy);
+  }
+
   const dataProvider = {
     categories,
     products,
@@ -34,6 +48,8 @@ export function DataProvider({ children }) {
     productsHandler,
     loginHandler,
     editCategory,
+    addCategory,
+    deleteCategory,
   };
 
   return (

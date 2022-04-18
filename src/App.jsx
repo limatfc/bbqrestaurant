@@ -13,6 +13,7 @@ import Login from "./screens/admin/Login";
 import AdminHome from "./screens/admin/AdminHome";
 import "./styles/Styles.css";
 import EditCategory from "./screens/admin/EditCategory";
+import AddCategory from "./screens/admin/AddCategory";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -33,6 +34,9 @@ export default function App() {
         {isLoggedIn && <Route path="/admin-home" element={<AdminHome />} />}
         {isLoggedIn && (
           <Route path="/edit-category/:category" element={<EditCategory />} />
+        )}
+        {isLoggedIn && (
+          <Route path="/add-new-category" element={<AddCategory />} />
         )}
       </Routes>
       <Footer />
