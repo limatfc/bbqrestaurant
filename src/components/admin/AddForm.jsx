@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputField from "../../components/admin/InputField";
 
-export default function AddForm({ setInputedData, confirmHandler, setId }) {
+export default function AddForm({ setData, confirmAdd, setId }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -12,14 +12,14 @@ export default function AddForm({ setInputedData, confirmHandler, setId }) {
 
   function onSubmitHandler(event) {
     event.preventDefault();
-    setInputedData({
+    setData({
       name: name,
       description: description,
       imageDescription: imageDescription,
       imageURL: imageURL,
       URLName: URLName,
     });
-    confirmHandler(true);
+    confirmAdd(true);
   }
 
   return (

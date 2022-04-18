@@ -20,7 +20,7 @@ export default function EditForm({ closeForm, id, URLName }) {
       imageDescription: imageDescription,
       URLName: URLName,
     };
-    //Alter the name of the category to link to the right collection in the database
+
     editDocument("menu", id, inputedData);
     editCategory(id, inputedData);
     closeForm();
