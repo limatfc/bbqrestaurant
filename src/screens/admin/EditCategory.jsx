@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useReadData from "../../hooks/useReadData";
 import Loading from "../../screens/clients/Loading";
+import add from "../../assets/icons/add.png";
 
 export default function EditCategory() {
   const { categories, productsHandler, products } = useDataProvider();
@@ -50,6 +51,10 @@ export default function EditCategory() {
       )}
       <div>
         Here are all the products registered under the {name} category:
+        <button onClick={() => navigate(`/${category}/add-new-product`)}>
+          Add a new product
+          <img src={add} alt="a plus sign" />
+        </button>
         {productCards}
       </div>
       <button onClick={() => navigate("/admin-home")}>Go back</button>

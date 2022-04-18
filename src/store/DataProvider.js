@@ -49,6 +49,13 @@ export function DataProvider({ children }) {
     setProducts(productsCopy);
   }
 
+  function addProduct(id, inputedData) {
+    const productsCopy = [...products];
+    inputedData.id = id;
+    productsCopy.push(inputedData);
+    setProducts(productsCopy);
+  }
+
   const dataProvider = {
     categories,
     products,
@@ -60,6 +67,7 @@ export function DataProvider({ children }) {
     addCategory,
     deleteCategory,
     editProduct,
+    addProduct,
   };
 
   return (

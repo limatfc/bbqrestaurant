@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputField from "./InputField";
 import { editDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
+import { ingredientsHandler } from "../../scripts/pure-functions/ingredientsHandler";
 
 export default function ProductEditForm({ find, category, formHandler }) {
   const [name, setName] = useState("");
@@ -14,10 +15,9 @@ export default function ProductEditForm({ find, category, formHandler }) {
   const { editProduct } = useDataProvider();
   const { id, URLName } = find;
 
-  function ingredientsHandler(item) {
-    const oneString = [item];
-    const multipleStrings = oneString[0].split(",");
-    setIngredients(multipleStrings);
+  function editIngredients(item) {
+    const editedArray = ingredientsHandler(item);
+    setIngredients(editedArray);
   }
 
   function onSubmitHandler(event) {
@@ -41,7 +41,7 @@ export default function ProductEditForm({ find, category, formHandler }) {
     <form onSubmit={onSubmitHandler}>
       <InputField label="Name" setter={setName} />
       <InputField label="Price" setter={setPrice} />
-      <InputField label="Ingredients" setter={ingredientsHandler} />
+      <InputField label="Ingredients" setter={editIngredients} />
       <InputField
         label="Product long description"
         setter={setlongDescription}
