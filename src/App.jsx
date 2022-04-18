@@ -12,7 +12,7 @@ import Product from "./screens/clients/Product";
 import Login from "./screens/admin/Login";
 import AdminHome from "./screens/admin/AdminHome";
 import "./styles/Styles.css";
-import CategoryInfo from "./screens/admin/CategoryInfo";
+import EditCategory from "./screens/admin/EditCategory";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -32,7 +32,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         {isLoggedIn && <Route path="/admin-home" element={<AdminHome />} />}
         {isLoggedIn && (
-          <Route path="/category-edit/:category" element={<CategoryInfo />} />
+          <Route path="/edit-category/:category" element={<EditCategory />} />
         )}
       </Routes>
       <Footer />

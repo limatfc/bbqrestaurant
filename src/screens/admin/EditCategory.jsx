@@ -1,13 +1,13 @@
-import EditCategory from "../../components/admin/EditCategory";
+import EditForm from "../../components/admin/EditForm";
 import useDataProvider from "../../store/useDataProvider";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function CategoryInfo() {
+export default function EditCategory() {
   const [showForm, setShowForm] = useState(false);
-  const dataContext = useDataProvider();
+  const { categories } = useDataProvider();
+  const navigate = useNavigate();
   const { category } = useParams();
-  const { categories } = dataContext;
 
   const findCategory = categories.find((item) => item.URLName === category);
   const { name, URLName, description, imageDescription, imageURL, id } =
@@ -23,12 +23,12 @@ export default function CategoryInfo() {
   return (
     <ul>
       <li>Name: {name}</li>
-      <li>URLName: {URLName}</li>
       <li>Description: {description}</li>
       <li>imageDescription: {imageDescription}</li>
       <li>Image URL: {imageURL}</li>
       <button onClick={OpenForm}>Edit information</button>
-      {showForm && <EditCategory closeForm={closeForm} id={id} />}
+      <button onClick={() => navigate("/admin-home")}>Go back</button>
+      {showForm && <EditForm closeForm={closeForm} id={id} URLName={URLName} />}
     </ul>
   );
 }

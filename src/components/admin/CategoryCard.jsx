@@ -7,7 +7,7 @@ export default function CategoryCard({ item }) {
   return (
     <section>
       <h3>Category: {name}</h3>
-      <Link to={`/category-edit/${URLName}`}>
+      <Link to={`/edit-category/${URLName}`}>
         <img src={edit} alt="edit icon" />
       </Link>
     </section>
