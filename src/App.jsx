@@ -15,6 +15,7 @@ import "./styles/Styles.css";
 import EditCategory from "./screens/admin/EditCategory";
 import AddCategory from "./screens/admin/AddCategory";
 import EditProduct from "./screens/admin/EditProduct";
+import AddProduct from "./screens/admin/AddProduct";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -41,6 +42,7 @@ export default function App() {
               path="/edit-category/:category/edit-product/:product"
               element={<EditProduct />}
             />
+            <Route path="/:category/add-new-product" element={<AddProduct />} />
           </>
         )}
       </Routes>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddForm from "../../components/admin/CategoryAddForm";
+import CategoryAddForm from "../../components/admin/CategoryAddForm";
 import { useNavigate } from "react-router-dom";
 import useDataProvider from "../../store/useDataProvider";
 import { addDocument } from "../../scripts/firebase/setDocument";
@@ -23,8 +23,12 @@ export default function AddCategory() {
 
   return (
     <div>
-      Please fill in all the following fields:
-      <AddForm setData={setData} confirmAdd={confirmAdd} setId={setId} />
+      <h3>Please fill in all the following fields:</h3>
+      <CategoryAddForm
+        setData={setData}
+        confirmAdd={confirmAdd}
+        setId={setId}
+      />
       {showConfirm && (
         <div>
           <p>The category you created is: </p>

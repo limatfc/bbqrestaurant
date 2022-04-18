@@ -49,6 +49,20 @@ export function DataProvider({ children }) {
     setProducts(productsCopy);
   }
 
+  function addProduct(id, inputedData) {
+    const productsCopy = [...products];
+    inputedData.id = id;
+    productsCopy.push(inputedData);
+    setProducts(productsCopy);
+  }
+
+  function deleteProduct(id) {
+    const productsCopy = [...products];
+    let findIndex = productsCopy.findIndex((item) => item.id === id);
+    productsCopy.splice(findIndex, 1);
+    setProducts(productsCopy);
+  }
+
   const dataProvider = {
     categories,
     products,
@@ -60,6 +74,8 @@ export function DataProvider({ children }) {
     addCategory,
     deleteCategory,
     editProduct,
+    addProduct,
+    deleteProduct,
   };
 
   return (
