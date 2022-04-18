@@ -3,7 +3,7 @@ import InputField from "./InputField";
 import { editDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
 
-export default function EditForm({ closeForm, id, URLName }) {
+export default function CategoryEditForm({ closeForm, id, URLName }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [imageDescription, setImageDescription] = useState("");

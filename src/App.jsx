@@ -14,6 +14,7 @@ import AdminHome from "./screens/admin/AdminHome";
 import "./styles/Styles.css";
 import EditCategory from "./screens/admin/EditCategory";
 import AddCategory from "./screens/admin/AddCategory";
+import EditProduct from "./screens/admin/EditProduct";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -31,12 +32,16 @@ export default function App() {
         <Route path="/menu/:category/:product" element={<Product />} />
         <Route path="*" element={<Error />} />
         <Route path="/login" element={<Login />} />
-        {isLoggedIn && <Route path="/admin-home" element={<AdminHome />} />}
         {isLoggedIn && (
-          <Route path="/edit-category/:category" element={<EditCategory />} />
-        )}
-        {isLoggedIn && (
-          <Route path="/add-new-category" element={<AddCategory />} />
+          <>
+            <Route path="/admin-home" element={<AdminHome />} />
+            <Route path="/edit-category/:category" element={<EditCategory />} />
+            <Route path="/add-new-category" element={<AddCategory />} />
+            <Route
+              path="/edit-category/:category/edit-product/:product"
+              element={<EditProduct />}
+            />
+          </>
         )}
       </Routes>
       <Footer />

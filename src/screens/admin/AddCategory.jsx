@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddForm from "../../components/admin/AddForm";
+import AddForm from "../../components/admin/CategoryAddForm";
 import { useNavigate } from "react-router-dom";
 import useDataProvider from "../../store/useDataProvider";
 import { addDocument } from "../../scripts/firebase/setDocument";
