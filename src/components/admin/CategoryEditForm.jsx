@@ -1,25 +1,29 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import InputField from "../../components/admin/InputField";
+import InputField from "./InputField";
+import { editDocument } from "../../scripts/firebase/setDocument";
+import useDataProvider from "../../store/useDataProvider";
 
-export default function AddForm({ setInputedData, confirmHandler, setId }) {
-  const navigate = useNavigate();
+export default function CategoryEditForm({ closeForm, id, URLName }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [imageDescription, setImageDescription] = useState("");
   const [imageURL, setImageURL] = useState("");
-  const [URLName, setURLName] = useState("");
+  const { editCategory } = useDataProvider();
 
   function onSubmitHandler(event) {
     event.preventDefault();
-    setInputedData({
+
+    const inputedData = {
       name: name,
+      imageURL: imageURL,
       description: description,
       imageDescription: imageDescription,
-      imageURL: imageURL,
       URLName: URLName,
-    });
-    confirmHandler(true);
+    };
+
+    editDocument("menu", id, inputedData);
+    editCategory(id, inputedData);
+    closeForm();
   }
 
   return (
@@ -28,12 +32,10 @@ export default function AddForm({ setInputedData, confirmHandler, setId }) {
       <InputField label="Description" setter={setDescription} />
       <InputField label="Image Description" setter={setImageDescription} />
       <InputField label="Image URL" setter={setImageURL} />
-      <InputField label="Id" setter={setId} />
-      <InputField label="URL address" setter={setURLName} />
-      <button type="button" onClick={() => navigate("/admin-home")}>
+      <button type="submit">Confirm changes</button>
+      <button type="button" onClick={closeForm}>
         Cancel
       </button>
-      <button type="submit">Add new category</button>
     </form>
   );
 }

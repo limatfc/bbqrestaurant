@@ -1,29 +1,25 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InputField from "./InputField";
-import { editDocument } from "../../scripts/firebase/setDocument";
-import useDataProvider from "../../store/useDataProvider";
 
-export default function EditForm({ closeForm, id, URLName }) {
+export default function CategoryAddForm({ setData, confirmAdd, setId }) {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [imageDescription, setImageDescription] = useState("");
   const [imageURL, setImageURL] = useState("");
-  const { editCategory } = useDataProvider();
+  const [URLName, setURLName] = useState("");
 
   function onSubmitHandler(event) {
     event.preventDefault();
-
-    const inputedData = {
+    setData({
       name: name,
-      imageURL: imageURL,
       description: description,
       imageDescription: imageDescription,
+      imageURL: imageURL,
       URLName: URLName,
-    };
-    //Alter the name of the category to link to the right collection in the database
-    editDocument("menu", id, inputedData);
-    editCategory(id, inputedData);
-    closeForm();
+    });
+    confirmAdd(true);
   }
 
   return (
@@ -32,10 +28,12 @@ export default function EditForm({ closeForm, id, URLName }) {
       <InputField label="Description" setter={setDescription} />
       <InputField label="Image Description" setter={setImageDescription} />
       <InputField label="Image URL" setter={setImageURL} />
-      <button type="submit">Confirm changes</button>
-      <button type="button" onClick={closeForm}>
+      <InputField label="Id" setter={setId} />
+      <InputField label="URL address" setter={setURLName} />
+      <button type="button" onClick={() => navigate("/admin-home")}>
         Cancel
       </button>
+      <button type="submit">Add new category</button>
     </form>
   );
 }

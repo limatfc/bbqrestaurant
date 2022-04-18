@@ -40,6 +40,15 @@ export function DataProvider({ children }) {
     setCategories(categoryCopy);
   }
 
+  function editProduct(id, inputedData, URLName) {
+    const productsCopy = [...products];
+    inputedData.id = id;
+    inputedData.URLName = URLName;
+    let findIndex = productsCopy.findIndex((item) => item.id === id);
+    productsCopy.splice(findIndex, 1, inputedData);
+    setProducts(productsCopy);
+  }
+
   const dataProvider = {
     categories,
     products,
@@ -50,6 +59,7 @@ export function DataProvider({ children }) {
     editCategory,
     addCategory,
     deleteCategory,
+    editProduct,
   };
 
   return (
