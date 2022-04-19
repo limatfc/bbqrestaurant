@@ -10,3 +10,39 @@
     url(../../assets/fonts/Mukta-Regular.ttf) format("truetype");
   font-weight: normal;
 }
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+}
+p {
+  font-size: 18px;
+}
+small {
+  font-size: 16px;
+}
+.label {
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.label:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+p,
+small,
+.label {
+  margin: 0;
+  padding: 0;
+}

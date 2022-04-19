@@ -4,11 +4,13 @@ import twitter from "../../assets/icons/twitter.png";
 
 export default function Footer() {
   return (
-    <section>
+    <section className="footer-wrapper">
       <small>Follow us:</small>
-      <img src={facebook} alt="facebook icon" />
-      <img src={instagram} alt="instagram icon" />
-      <img src={twitter} alt="twitter icon" />
+      <div>
+        <img src={facebook} alt="facebook icon" />
+        <img src={instagram} alt="instagram icon" />
+        <img src={twitter} alt="twitter icon" />
+      </div>
     </section>
   );
 }

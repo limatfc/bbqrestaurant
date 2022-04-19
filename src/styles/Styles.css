@@ -2,10 +2,17 @@
 @import "./base/colors.css";
 @import "./base/layout.css";
 
+/* atoms */
+@import "./atoms/button.css";
+
 /* screens */
-@import "./screens/Home.css";
+@import "./clients/screens/Home.css";
+@import "./clients/screens/Menu.css";
+@import "./clients/screens/Category.css";
 
 /* components */
-@import "./components/CategoryCard.css";
-@import "./components/NavigationBar.css";
-@import "../styles/components/NavigationBarOverlayer.css";
+@import "./clients/components/CategoryCard.css";
+@import "./clients/components/NavigationBarOverlayer.css";
+@import "./clients/components/NavigationBarMobile.css";
+@import "./clients/components/Footer.css";
+@import "./clients/components/ProductCard.css";

@@ -10,11 +10,15 @@ export default function NavigationBar() {
   function toggleSideNav() {
     setShowSideNav(!showSideNav);
   }
+  let screen = "";
+  window.innerWidth < 750 ? (screen = "mobile") : (screen = "desktop");
 
   return (
     <div className="navigation-bar">
-      <NavigationBarDesktop />
-      <NavigationBarMobile toggleSideNav={toggleSideNav} />
+      {screen === "desktop" && <NavigationBarDesktop />}
+      {screen === "mobile" && (
+        <NavigationBarMobile toggleSideNav={toggleSideNav} />
+      )}
       {showSideNav && <NavigationBarOverlayer toggleSideNav={toggleSideNav} />}
     </div>
   );

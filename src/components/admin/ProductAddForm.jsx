@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import InputField from "./InputField";
-import { ingredientsHandler } from "../../scripts/pure-functions/ingredientsHandler";
+import { ingredientsHandler } from "../../scripts/logic/ingredientsHandler";
 
 export default function ProductAddForm({ setData, setId }) {
   const [name, setName] = useState("");

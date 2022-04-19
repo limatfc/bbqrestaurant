@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputField from "./InputField";
 
-export default function CategoryAddForm({ setData, confirmAdd, setId }) {
+export default function CategoryAddForm({ actions }) {
+  const { setData, confirmAdd, setId } = actions;
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

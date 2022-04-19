@@ -1,0 +1,16 @@
+.footer-wrapper {
+  background-color: black;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.footer-wrapper small {
+  color: #b1a36d;
+}
+
+.footer-wrapper div img {
+  padding: 0 24px 24px 24px;
+}

@@ -24,7 +24,7 @@ export default function EditProduct() {
   function formHandler() {
     setShowForm(!showForm);
   }
-  const ingredient = ingredients.map((item) => <li>{item}</li>);
+  const ingredient = ingredients.map((item) => <li key={item}>{item}</li>);
 
   return (
     <div>

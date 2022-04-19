@@ -1,4 +1,4 @@
-import ReservationForm from "../../components/client/ReservationForm";
+import ReservationForm from "../../components/clients/ReservationForm";
 import ownerImage from "../../assets/images/contact.png";
 
 export default function Contact() {

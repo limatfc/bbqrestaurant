@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { dataContext } from "./data-context";
+import { editState, addState, deleteState } from "../scripts/logic/state";
 
 export function DataProvider({ children }) {
   const [categories, setCategories] = useState([]);
@@ -19,68 +20,49 @@ export function DataProvider({ children }) {
   }
 
   function editCategory(id, inputedData) {
-    const categoryCopy = [...categories];
-    inputedData.id = id;
-    let findIndex = categoryCopy.findIndex((item) => item.id === id);
-    categoryCopy.splice(findIndex, 1, inputedData);
-    setCategories(categoryCopy);
+    const result = editState(categories, id, inputedData);
+    setCategories(result);
   }
 
   function addCategory(id, inputedData) {
-    const categoryCopy = [...categories];
-    inputedData.id = id;
-    categoryCopy.push(inputedData);
-    setCategories(categoryCopy);
+    const result = addState(categories, id, inputedData);
+    setCategories(result);
   }
 
   function deleteCategory(id) {
-    const categoryCopy = [...categories];
-    let findIndex = categoryCopy.findIndex((item) => item.id === id);
-    categoryCopy.splice(findIndex, 1);
-    setCategories(categoryCopy);
+    const result = deleteState(categories, id);
+    setCategories(result);
   }
 
   function editProduct(id, inputedData, URLName) {
-    const productsCopy = [...products];
-    inputedData.id = id;
-    inputedData.URLName = URLName;
-    let findIndex = productsCopy.findIndex((item) => item.id === id);
-    productsCopy.splice(findIndex, 1, inputedData);
-    setProducts(productsCopy);
+    const result = editState(products, id, inputedData);
+    setProducts(result);
   }
 
   function addProduct(id, inputedData) {
-    const productsCopy = [...products];
-    inputedData.id = id;
-    productsCopy.push(inputedData);
-    setProducts(productsCopy);
+    const result = addState(products, id, inputedData);
+    setProducts(result);
   }
 
   function deleteProduct(id) {
-    const productsCopy = [...products];
-    let findIndex = productsCopy.findIndex((item) => item.id === id);
-    productsCopy.splice(findIndex, 1);
-    setProducts(productsCopy);
+    const result = deleteState(products, id);
+    setProducts(result);
   }
 
-  return (
-    <dataContext.Provider
-      value={{
-        categories,
-        products,
-        isLoggedIn,
-        categoriesHandler,
-        productsHandler,
-        loginHandler,
-        editCategory,
-        addCategory,
-        deleteCategory,
-        editProduct,
-        addProduct,
-        deleteProduct,
-      }}
-    >
-      {children}
-    </dataContext.Provider>
-  );
+  const value = {
+    categories,
+    products,
+    isLoggedIn,
+    categoriesHandler,
+    productsHandler,
+    loginHandler,
+    editCategory,
+    addCategory,
+    deleteCategory,
+    editProduct,
+    addProduct,
+    deleteProduct,
+  };
+
+  return <dataContext.Provider value={value}>{children}</dataContext.Provider>;
 }

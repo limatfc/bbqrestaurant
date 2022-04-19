@@ -1,0 +1,28 @@
+.home-wrapper {
+  background-color: black;
+}
+
+.home-wrapper .heroImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  opacity: 0.5;
+}
+
+.home-wrapper h1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #f6f6f1;
+  text-align: center;
+}
+
+.home-wrapper button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

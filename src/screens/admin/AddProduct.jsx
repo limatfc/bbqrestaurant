@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import ProductAddForm from "../../components/admin/ProductAddForm";
-import ProductDetails from "../../components/admin/ProductDetails";
+import NewProduct from "../../components/admin/NewProduct";
 
 export default function AddProduct() {
   const [data, setData] = useState([]);
@@ -11,7 +11,7 @@ export default function AddProduct() {
     <div>
       <h3>Please fill in all the following fields:</h3>
       <ProductAddForm setData={setData} setId={setId} />
-      <ProductDetails data={data} id={id} />
+      <NewProduct data={data} id={id} />
     </div>
   );
 }

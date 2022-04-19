@@ -1,0 +1,24 @@
+.primary {
+  width: 290px;
+  height: 50px;
+  color: #f6f6f1;
+  text-align: center;
+  background-color: #b1a36d;
+  border-radius: 10px;
+  border-style: hidden;
+}
+
+.primary:hover {
+  background-color: #837549;
+}
+
+.secundary {
+  background-color: #f6f6f1;
+  text-align: center;
+  color: #837549;
+  border-radius: 10px;
+  border-color: #837549;
+  border-style: solid;
+  width: 250px;
+  height: 40px;
+}
