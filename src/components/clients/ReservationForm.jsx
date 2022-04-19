@@ -9,8 +9,12 @@ export default function ReservationForm() {
     </option>
   ));
 
+  function onReservation(event) {
+    event.preventDefault();
+  }
+
   return (
-    <form>
+    <form onSubmit={onReservation}>
       <p>Make a reservation</p>
       <label>
         First and last names

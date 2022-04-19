@@ -4,18 +4,18 @@ import useDataProvider from "./store/useDataProvider";
 import Home from "./screens/clients/Home";
 import Category from "./screens/clients/Category";
 import Contact from "./screens/clients/Contact";
-import Footer from "./components/client/Footer";
+import Footer from "./components/clients/Footer";
 import Menu from "./screens/clients/Menu";
-import NavigationBar from "./components/client/NavigationBar";
+import NavigationBar from "./components/clients/NavigationBar";
 import Error from "./screens/clients/Error";
 import Product from "./screens/clients/Product";
 import Login from "./screens/admin/Login";
 import AdminHome from "./screens/admin/AdminHome";
-import "./styles/Styles.css";
 import EditCategory from "./screens/admin/EditCategory";
 import AddCategory from "./screens/admin/AddCategory";
 import EditProduct from "./screens/admin/EditProduct";
 import AddProduct from "./screens/admin/AddProduct";
+import "./styles/Styles.css";
 
 export default function App() {
   const dataContext = useDataProvider();

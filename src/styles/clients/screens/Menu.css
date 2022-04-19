@@ -1,0 +1,21 @@
+.menu-wrapper {
+  padding: 24px 16px;
+}
+
+.menu-wrapper h2 {
+  text-align: center;
+}
+
+.menu-wrapper p {
+  text-align: justify;
+}
+
+.menu-wrapper hr {
+  width: 70%;
+  margin-top: 16px;
+}
+
+.primary {
+  display: block;
+  margin: 16px auto 0 auto;
+}

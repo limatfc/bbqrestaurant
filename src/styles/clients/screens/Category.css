@@ -1,0 +1,19 @@
+.category-wrapper img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.category-wrapper h2 {
+  padding: 0 16px;
+  text-align: center;
+}
+
+.category-wrapper p {
+  padding: 0 16px;
+  text-align: justify;
+}
+
+.cards-wrapper {
+  padding: 0 16px;
+}

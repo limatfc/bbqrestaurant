@@ -1,21 +1,27 @@
+import { useNavigate } from "react-router-dom";
 import useDataProvider from "../../store/useDataProvider";
-import CategoryCard from "../../components/client/CategoryCard";
+import CategoryCard from "../../components/clients/CategoryCard";
 import Error from "./Error";
 import Loading from "./Loading";
 
 export default function Menu({ status }) {
   const dataContext = useDataProvider();
+  const navigate = useNavigate();
   const { categories } = dataContext;
 
-  const categoryCards = categories.map((item) => (
-    <CategoryCard key={item.id} item={item} />
+  const categoryCards = categories.map((item, index) => (
+    <CategoryCard key={item.id} item={item} index={index} />
   ));
+
+  function onClickHandler() {
+    navigate("/contact");
+  }
 
   if (status === 0) return <Loading />;
   if (status === 2) return <Error />;
 
   return (
-    <div>
+    <div className="menu-wrapper">
       <h2>Menu</h2>
       <p>
         We offer a "full churrasco experience" which includes continuous
@@ -23,7 +29,9 @@ export default function Menu({ status }) {
         well as an extensive buffet, or à la carte service.
       </p>
       <div>{categoryCards}</div>
-      <button>Book a table</button>
+      <button className="label primary" onClick={onClickHandler}>
+        Book a table
+      </button>
       <hr />
     </div>
   );
