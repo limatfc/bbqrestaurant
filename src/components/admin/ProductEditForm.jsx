@@ -2,7 +2,7 @@ import { useState } from "react";
 import InputField from "./InputField";
 import { editDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
-import { ingredientsHandler } from "../../scripts/pure-functions/ingredientsHandler";
+import { ingredientsHandler } from "../../scripts/logic/ingredientsHandler";
 
 export default function ProductEditForm({ find, category, formHandler }) {
   const [name, setName] = useState("");
@@ -31,9 +31,10 @@ export default function ProductEditForm({ find, category, formHandler }) {
       imageURL: imageURL,
       imageDescription: imageDescription,
       ingredients: ingredients,
+      URLName: URLName,
     };
     editDocument(`menu/${category}/content`, id, inputedData);
-    editProduct(id, inputedData, URLName);
+    editProduct(id, inputedData);
     formHandler();
   }
 

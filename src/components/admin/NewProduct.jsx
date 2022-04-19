@@ -2,7 +2,7 @@ import { addDocument } from "../../scripts/firebase/setDocument";
 import { useParams, useNavigate } from "react-router-dom";
 import useDataProvider from "../../store/useDataProvider";
 
-export default function ProductDetails({ data, id }) {
+export default function NewProduct({ data, id }) {
   const { category } = useParams();
   const navigate = useNavigate();
   const { addProduct } = useDataProvider();

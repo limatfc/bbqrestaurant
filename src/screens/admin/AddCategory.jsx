@@ -24,11 +24,7 @@ export default function AddCategory() {
   return (
     <div>
       <h3>Please fill in all the following fields:</h3>
-      <CategoryAddForm
-        setData={setData}
-        confirmAdd={confirmAdd}
-        setId={setId}
-      />
+      <CategoryAddForm actions={{ setData, confirmAdd, setId }} />
       {showConfirm && (
         <div>
           <p>The category you created is: </p>
