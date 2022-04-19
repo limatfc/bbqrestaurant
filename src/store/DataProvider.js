@@ -63,22 +63,24 @@ export function DataProvider({ children }) {
     setProducts(productsCopy);
   }
 
-  const dataProvider = {
-    categories,
-    products,
-    isLoggedIn,
-    categoriesHandler,
-    productsHandler,
-    loginHandler,
-    editCategory,
-    addCategory,
-    deleteCategory,
-    editProduct,
-    addProduct,
-    deleteProduct,
-  };
-
   return (
-    <dataContext.Provider value={dataProvider}>{children}</dataContext.Provider>
+    <dataContext.Provider
+      value={{
+        categories,
+        products,
+        isLoggedIn,
+        categoriesHandler,
+        productsHandler,
+        loginHandler,
+        editCategory,
+        addCategory,
+        deleteCategory,
+        editProduct,
+        addProduct,
+        deleteProduct,
+      }}
+    >
+      {children}
+    </dataContext.Provider>
   );
 }

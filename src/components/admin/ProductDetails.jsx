@@ -2,7 +2,7 @@ import { addDocument } from "../../scripts/firebase/setDocument";
 import { useParams, useNavigate } from "react-router-dom";
 import useDataProvider from "../../store/useDataProvider";
 
-export default function ProductDetail({ data, id }) {
+export default function ProductDetails({ data, id }) {
   const { category } = useParams();
   const navigate = useNavigate();
   const { addProduct } = useDataProvider();
@@ -22,7 +22,6 @@ export default function ProductDetail({ data, id }) {
       <p>Reminder: you cannot change the ID and the URL address later.</p>
       <ul>
         <li>Name: {data.name}</li>
-        <li>ID: {id}</li>
         <li>URL address: {data.URLName}</li>
         <li>Image Description: {data.imageDescription}</li>
         <li>Image URL: {data.imageURL}</li>

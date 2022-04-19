@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { v4 as uuidv4 } from "uuid";
 import InputField from "./InputField";
 import { ingredientsHandler } from "../../scripts/pure-functions/ingredientsHandler";
 
@@ -31,6 +31,8 @@ export default function ProductAddForm({ setData, setId }) {
       URLName,
       ingredients,
     };
+    const id = uuidv4();
+    setId(id);
     setData(inputedData);
   }
 
@@ -38,7 +40,6 @@ export default function ProductAddForm({ setData, setId }) {
     <form onSubmit={onSubmitHandler}>
       <InputField label="Name" setter={setName} />
       <InputField label="Price" setter={setPrice} />
-      <InputField label="Id" setter={setId} />
       <InputField label="Long Description" setter={setLongDescriptionn} />
       <InputField label="Short Description" setter={setShortDescription} />
       <InputField label="Image Description" setter={setImageDescription} />
