@@ -8,9 +8,18 @@ export default function NavigationBarDesktop() {
         src={logo}
         alt="a white cowboy hat besides the writing 'Flaming Cowboy'"
       />
-      <Link to="/">Home</Link>
-      <Link to="/menu">Menu</Link>
-      <Link to="/contact">Contact</Link>
+      <div></div>
+      <Link className="link" to="/">
+        Home
+      </Link>
+      <hr className="vertical" />
+      <Link className="link" to="/menu">
+        Menu
+      </Link>
+      <hr className="vertical" />
+      <Link className="link" to="/contact">
+        Contact
+      </Link>
     </section>
   );
 }

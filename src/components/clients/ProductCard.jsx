@@ -12,8 +12,8 @@ export default function ProductCard({ item, index }) {
       <section className={`product-card-wrapper ${style}`}>
         <img src={imageURL} alt={imageDescription} />
         <h3>{name}</h3>
-        <p>{shortDescription}</p>
-        <p>
+        <p className="description">{shortDescription}</p>
+        <p className="price">
           <span>Price: </span>
           {price}:-
         </p>

@@ -28,7 +28,7 @@ export default function Menu({ status }) {
         servings of fire-roasted beef, lamb, pork, chicken, and other meats, as
         well as an extensive buffet, or à la carte service.
       </p>
-      <div>{categoryCards}</div>
+      <div className="all-category-cards">{categoryCards}</div>
       <button className="label primary" onClick={onClickHandler}>
         Book a table
       </button>

@@ -22,3 +22,13 @@
   width: 250px;
   height: 40px;
 }
+
+@media (min-width: 750px) {
+  .primary {
+    width: 400px;
+  }
+
+  .secundary {
+    width: 300px;
+  }
+}

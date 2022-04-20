@@ -8,7 +8,7 @@ export default function ReservationForm() {
   const nameSettings = inputSettings.clients.contact.name;
   const emailSettings = inputSettings.clients.contact.email;
 
-  const options = data.map((item) => (
+  const options = data.select.map((item) => (
     <option key={item} value={item}>
       {item}
     </option>

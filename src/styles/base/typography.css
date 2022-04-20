@@ -50,3 +50,24 @@ li,
   margin: 0;
   padding: 0;
 }
+
+@media (min-width: 750px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  p,
+  span,
+  li {
+    font-size: 20px;
+  }
+  small {
+    font-size: 18px;
+  }
+}

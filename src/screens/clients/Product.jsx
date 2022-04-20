@@ -26,8 +26,8 @@ export default function Product() {
       <span className="bold">Ingredients:</span>
       <ul>{ingredients}</ul>
       <img src={findProduct.imageURL} alt={findProduct.imageDescription} />
-      <span className="bold">Price: </span>
-      <span>{findProduct.price}:-</span>
+      <span className="bold product-price">Price: </span>
+      <span className="value">{findProduct.price}:-</span>
       <Link className="label secundary" to={`/menu/${category}`}>
         Go back
       </Link>

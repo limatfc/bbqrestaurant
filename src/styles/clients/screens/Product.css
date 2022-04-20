@@ -49,6 +49,45 @@
 
 .product-wrapper hr {
   grid-column: 1 / span 2;
-  width: 70%;
   margin-bottom: 16px;
+}
+
+@media (min-width: 750px) {
+  .product-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .product-wrapper h2 {
+    grid-column: 1 / span 4;
+  }
+  .product-wrapper p {
+    grid-column: 1 / span 4;
+    margin-bottom: 24px;
+  }
+
+  .product-wrapper ul {
+    margin-bottom: 24px;
+  }
+
+  .product-wrapper img {
+    max-height: 500px;
+    object-fit: contain;
+    grid-column: 1 / span 4;
+    margin-bottom: 24px;
+  }
+  .product-wrapper hr {
+    grid-column: 1 / span 4;
+  }
+  .product-wrapper .secundary {
+    grid-column: 1 / span 4;
+  }
+  .product-price {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  .value {
+    grid-column: 4;
+    grid-row: 3;
+  }
 }
