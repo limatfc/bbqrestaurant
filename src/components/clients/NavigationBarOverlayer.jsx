@@ -1,10 +1,17 @@
-import { Link } from "react-router-dom";
 import facebook from "../../assets/icons/facebook.png";
 import instagram from "../../assets/icons/instagram.png";
+import { useNavigate } from "react-router-dom";
 import twitter from "../../assets/icons/twitter.png";
 import close from "../../assets/icons/close.png";
 
 export default function NavigationBarOverlayer({ toggleSideNav }) {
+  const navigate = useNavigate();
+
+  function onNavigate(path) {
+    navigate(path);
+    toggleSideNav();
+  }
+
   return (
     <section className="overlayer">
       <div onClick={toggleSideNav} className="background"></div>
@@ -14,15 +21,15 @@ export default function NavigationBarOverlayer({ toggleSideNav }) {
         </button>
         <hr />
         <hr />
-        <Link className="heading" to="/">
+        <button className="heading" onClick={() => onNavigate("/")}>
           Home
-        </Link>
-        <Link className="heading" to="/menu">
+        </button>
+        <button className="heading" onClick={() => onNavigate("/menu")}>
           Menu
-        </Link>
-        <Link className="heading" to="/contact">
+        </button>
+        <button className="heading" onClick={() => onNavigate("/contact")}>
           Contact
-        </Link>
+        </button>
         <hr />
         <hr />
         <img src={facebook} alt="facebook icon" />
