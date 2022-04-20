@@ -12,6 +12,8 @@
 @import "./clients/screens/Category.css";
 @import "./clients/screens/Product.css";
 @import "./clients/screens/Contact.css";
+@import "./clients/screens/Loading.css";
+@import "./clients/screens/Error.css";
 
 /* components */
 @import "./clients/components/CategoryCard.css";
