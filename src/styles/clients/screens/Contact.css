@@ -1,0 +1,43 @@
+.contact-wrapper {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-wrapper h2 {
+  text-align: center;
+}
+
+.span {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+}
+
+.contact-wrapper ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 8px;
+  font-weight: normal;
+}
+
+.image-wrapper img {
+  width: 100%;
+}
+
+.image-wrapper {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #f1f1f1;
+  padding: 8px;
+}
+
+.contact-wrapper .secundary {
+  margin: 0 auto;
+}
+
+.contact-wrapper hr {
+  width: 70%;
+  margin-top: 16px;
+}

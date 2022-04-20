@@ -21,7 +21,9 @@ h2 {
 h3 {
   font-size: 25px;
 }
-p {
+p,
+span,
+li {
   font-size: 18px;
 }
 small {
@@ -41,7 +43,9 @@ h1,
 h2,
 h3,
 p,
+span,
 small,
+li,
 .label {
   margin: 0;
   padding: 0;

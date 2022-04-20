@@ -29,6 +29,7 @@ export default function Category() {
       <Link className="label secundary" to="/menu">
         Go back
       </Link>
+      <hr />
     </div>
   );
 }

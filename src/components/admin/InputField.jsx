@@ -1,10 +1,13 @@
-export default function InputField({ label, setter }) {
+export default function InputField({ settings, setter }) {
+  const { label, type, placeholder, required } = settings;
+
   return (
-    <label>
+    <label className="input-field">
       {label}
       <input
-        type="text"
-        required
+        type={type}
+        required={required}
+        placeholder={placeholder}
         onChange={(event) => setter(event.target.value)}
       />
     </label>

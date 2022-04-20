@@ -8,12 +8,15 @@ export default function ProductCard({ item, index }) {
   index % 2 == 0 ? (style = "even") : (style = "odd");
 
   return (
-    <Link to={URLName}>
+    <Link className="link" to={URLName}>
       <section className={`product-card-wrapper ${style}`}>
         <img src={imageURL} alt={imageDescription} />
         <h3>{name}</h3>
         <p>{shortDescription}</p>
-        <p>{price}</p>
+        <p>
+          <span>Price: </span>
+          {price}:-
+        </p>
       </section>
     </Link>
   );
