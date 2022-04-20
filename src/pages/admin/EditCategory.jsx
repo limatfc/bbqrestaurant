@@ -4,7 +4,7 @@ import useDataProvider from "../../store/useDataProvider";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useReadData from "../../hooks/useReadData";
-import Loading from "../../screens/clients/Loading";
+import Loading from "../../pages/clients/Loading";
 import add from "../../assets/icons/add.png";
 
 export default function EditCategory() {
