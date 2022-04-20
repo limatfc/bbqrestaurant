@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useReadData from "../../hooks/useReadData";
 import useDataProvider from "../../store/useDataProvider";
 import Error from "./Error";
@@ -6,7 +6,6 @@ import Loading from "./Loading";
 
 export default function Product() {
   const { category, product } = useParams();
-  const navigate = useNavigate();
   const dataContext = useDataProvider();
   const { productsHandler, products } = dataContext;
   const { status } = useReadData(productsHandler, `menu/${category}/content/`);
@@ -21,14 +20,18 @@ export default function Product() {
   ));
 
   return (
-    <div>
+    <div className="product-wrapper">
       <h2>{findProduct.name}</h2>
       <p>{findProduct.longDescription}</p>
-      <p>Ingredients:</p>
+      <span className="bold">Ingredients:</span>
       <ul>{ingredients}</ul>
       <img src={findProduct.imageURL} alt={findProduct.imageDescription} />
-      <p>Price: {findProduct.price}</p>
-      <button onClick={() => navigate(`/menu/${category}`)}>Go back</button>
+      <span className="bold">Price: </span>
+      <span>{findProduct.price}:-</span>
+      <Link className="label secundary" to={`/menu/${category}`}>
+        Go back
+      </Link>
+      <hr />
     </div>
   );
 }

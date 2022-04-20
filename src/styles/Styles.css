@@ -4,11 +4,14 @@
 
 /* atoms */
 @import "./atoms/button.css";
+@import "./atoms/form.css";
 
 /* screens */
 @import "./clients/screens/Home.css";
 @import "./clients/screens/Menu.css";
 @import "./clients/screens/Category.css";
+@import "./clients/screens/Product.css";
+@import "./clients/screens/Contact.css";
 
 /* components */
 @import "./clients/components/CategoryCard.css";
@@ -16,3 +19,5 @@
 @import "./clients/components/NavigationBarMobile.css";
 @import "./clients/components/Footer.css";
 @import "./clients/components/ProductCard.css";
+@import "./clients/components/ReservationForm.css";
+@import "./admin/components/InputField.css";

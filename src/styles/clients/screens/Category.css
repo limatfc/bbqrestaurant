@@ -5,7 +5,7 @@
 }
 
 .category-wrapper h2 {
-  padding: 0 16px;
+  padding: 24px 16px 0 16px;
   text-align: center;
 }
 
@@ -16,4 +16,17 @@
 
 .cards-wrapper {
   padding: 0 16px;
+}
+
+.category-wrapper .secundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+}
+
+.category-wrapper hr {
+  width: 70%;
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
