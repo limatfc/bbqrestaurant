@@ -25,8 +25,30 @@
   margin: 0 auto 24px auto;
 }
 
-.category-wrapper hr {
-  width: 70%;
-  margin-top: 16px;
-  margin-bottom: 24px;
+@media (min-width: 750px) {
+  .category-wrapper p,
+  .category-wrapper h2,
+  .cards-wrapper {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+
+  .category-wrapper .secundary {
+    margin: 24px auto;
+  }
+
+  .category-wrapper p {
+    text-align: center;
+  }
+
+  .category-wrapper hr {
+    max-width: 1200px;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cards-wrapper {
+    display: flex;
+  }
 }

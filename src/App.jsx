@@ -23,7 +23,7 @@ export default function App() {
   const { status } = useReadData(categoriesHandler, "menu");
 
   return (
-    <div>
+    <div className="app">
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Home />} />

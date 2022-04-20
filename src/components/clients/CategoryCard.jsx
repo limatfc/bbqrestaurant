@@ -8,7 +8,7 @@ export default function CategoryCard({ item, index }) {
 
   return (
     <div className={`category-card-wrapper ${style}`}>
-      <div>
+      <div className="category-card-image">
         <img src={imageURL} alt={imageDescription} />
         <h3>{name}</h3>
       </div>

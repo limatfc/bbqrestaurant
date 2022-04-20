@@ -5,13 +5,13 @@
         "label": "First and last names",
         "type": "text",
         "placeholder": "John Doe",
-        "required": "true"
+        "required": true
       },
       "email": {
         "label": "Email address",
         "type": "text",
         "placeholder": "johndoe@email.com",
-        "required": "true"
+        "required": true
       }
     }
   },

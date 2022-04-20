@@ -37,7 +37,47 @@
   margin: 0 auto;
 }
 
-.contact-wrapper hr {
-  width: 70%;
-  margin-top: 16px;
+@media (min-width: 750px) {
+  .contact-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 150px;
+  }
+
+  .contact-wrapper h2,
+  .hours {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
+  .hours {
+    margin-bottom: 24px;
+  }
+
+  .contact-wrapper .form {
+    grid-row: 3 / span 5;
+  }
+  .image-wrapper {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .image-wrapper img {
+    max-width: 600px;
+  }
+  .address {
+    padding-top: 24px;
+  }
+  .contact-wrapper .secundary,
+  .contact-wrapper hr {
+    grid-column: 1 / span 2;
+  }
+  .contact-wrapper .secundary {
+    margin-top: 9px;
+    margin-bottom: 24px;
+  }
 }

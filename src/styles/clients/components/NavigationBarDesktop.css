@@ -1,0 +1,21 @@
+.desktop {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  padding: 24px;
+}
+
+.desktop div {
+  flex-grow: 1;
+}
+
+.desktop .link {
+  text-decoration: none;
+  color: #b1a36d;
+  padding: 0 48px;
+  font-size: 25px;
+}
+
+.desktop img {
+  width: 240px;
+}

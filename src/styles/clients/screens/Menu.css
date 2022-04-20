@@ -10,12 +10,22 @@
   text-align: justify;
 }
 
-.menu-wrapper hr {
-  width: 70%;
-  margin-top: 16px;
-}
-
 .primary {
   display: block;
   margin: 16px auto 0 auto;
+}
+
+@media (min-width: 750px) {
+  .menu-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .all-category-cards {
+    display: flex;
+    flex-direction: row;
+  }
+  .primary {
+    margin: 16px auto 24px auto;
+  }
 }

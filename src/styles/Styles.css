@@ -20,4 +20,6 @@
 @import "./clients/components/Footer.css";
 @import "./clients/components/ProductCard.css";
 @import "./clients/components/ReservationForm.css";
+@import "./clients/components/NavigationBarDesktop.css";
+
 @import "./admin/components/InputField.css";
