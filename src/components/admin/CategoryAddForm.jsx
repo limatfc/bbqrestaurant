@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import InputField from "./InputField";
+import data from "../../data/input-fields.json";
 
 export default function CategoryAddForm({ actions }) {
   const { setData, confirmAdd, setId } = actions;
@@ -10,6 +11,8 @@ export default function CategoryAddForm({ actions }) {
   const [imageDescription, setImageDescription] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [URLName, setURLName] = useState("");
+
+  const get = data.admin.categoryAddForm;
 
   function onSubmitHandler(event) {
     event.preventDefault();
@@ -25,12 +28,12 @@ export default function CategoryAddForm({ actions }) {
 
   return (
     <form onSubmit={onSubmitHandler}>
-      <InputField label="Name" setter={setName} />
-      <InputField label="Description" setter={setDescription} />
-      <InputField label="Image Description" setter={setImageDescription} />
-      <InputField label="Image URL" setter={setImageURL} />
-      <InputField label="Id" setter={setId} />
-      <InputField label="URL address" setter={setURLName} />
+      <InputField settings={get.name} setter={setName} />
+      <InputField settings={get.description} setter={setDescription} />
+      <InputField settings={get.imgDescription} setter={setImageDescription} />
+      <InputField settings={get.imgURL} setter={setImageURL} />
+      <InputField settings={get.id} setter={setId} />
+      <InputField settings={get.URLName} setter={setURLName} />
       <button type="button" onClick={() => navigate("/admin-home")}>
         Cancel
       </button>

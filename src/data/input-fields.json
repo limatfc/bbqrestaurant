@@ -15,5 +15,44 @@
       }
     }
   },
-  "admin": {}
+  "admin": {
+    "categoryAddForm": {
+      "name": {
+        "label": "Category name",
+        "type": "text",
+        "placeholder": "Roasted Chickens",
+        "required": true
+      },
+      "description": {
+        "label": "Description",
+        "type": "text",
+        "placeholder": "Our chickens are the best",
+        "required": true
+      },
+      "imgDescription": {
+        "label": "Description",
+        "type": "text",
+        "placeholder": "The picture is black and white",
+        "required": true
+      },
+      "imgURL": {
+        "label": "Image URL",
+        "type": "text",
+        "placeholder": "http://link",
+        "required": true
+      },
+      "id": {
+        "label": "Id",
+        "type": "text",
+        "placeholder": "roasted-chickens",
+        "required": true
+      },
+      "URLName": {
+        "label": "URL address",
+        "type": "text",
+        "placeholder": "roasted-chickens",
+        "required": true
+      }
+    }
+  }
 }
