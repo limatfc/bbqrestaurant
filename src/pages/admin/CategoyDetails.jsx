@@ -35,8 +35,8 @@ export default function CategoryDetails() {
         <li>Name: {findCategory.name}</li>
         <li>Description: {findCategory.description}</li>
         <li>imageDescription: {findCategory.imageDescription}</li>
-        <li>Image URL: {findCategory.imageURL}</li>
       </ul>
+      <img src={findCategory.imageURL} alt={findCategory.imageDescription} />
       <button onClick={onShowForm}>Edit category information</button>
       <button onClick={onShowProducts}>
         See all the products under the {findCategory.name} category

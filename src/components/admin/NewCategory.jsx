@@ -22,9 +22,9 @@ export default function NewCategory({ data }) {
         <li>Name: {data.name}</li>
         <li>URL address: {data.URLName}</li>
         <li>Description: {data.description}</li>
-        <li>Image URL: {data.imageURL}</li>
         <li>Image Description: {data.imageDescription}</li>
       </ul>
+      <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
       <button onClick={onClickHandler}>Yes, I am sure</button>
       <button

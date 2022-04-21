@@ -24,12 +24,12 @@ export default function EditProduct() {
         <li>Price: {find.price}</li>
         <li>Product long description: {find.longDescription}</li>
         <li>Product short description: {find.shortDescription}</li>
-        <li>Image Description: {find.imageDescription}</li>
-        <li>Image URL: {find.imageURL}</li>
         <li>
           Ingredients: <ul>{ingredient}</ul>
         </li>
+        <li>Image Description: {find.imageDescription}</li>
       </ul>
+      <img src={find.imageURL} alt={find.imageDescription} />
       <button onClick={formHandler}>Edit product information</button>
       {showForm && (
         <ProductEditForm

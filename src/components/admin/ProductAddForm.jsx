@@ -2,16 +2,17 @@ import { useState } from "react";
 import InputField from "./InputField";
 import { ingredientsHandler } from "../../scripts/logic/ingredientsHandler";
 import inputData from "../../data/input-fields.json";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import FileInput from "./FileInput";
+import { uploadFile } from "../../scripts/firebase/cloudStorage";
 
-export default function ProductAddForm({ setData, label }) {
-  const { category } = useParams();
+export default function ProductAddForm({ setData, variables }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [longDescription, setLongDescriptionn] = useState("");
   const [shortDescription, setShortDescription] = useState("");
   const [imageDescription, setImageDescription] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [file, setFile] = useState("");
   const [URLName, setURLName] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const info = inputData.admin.product;
@@ -21,9 +22,10 @@ export default function ProductAddForm({ setData, label }) {
     setIngredients(editedArray);
   }
 
-  function onSubmitHandler(event) {
+  async function onSubmitHandler(event) {
     event.preventDefault();
-
+    const filePath = `products/${variables.id}.png`;
+    const imageURL = await uploadFile(file, filePath);
     const inputedData = {
       name,
       price,
@@ -44,11 +46,11 @@ export default function ProductAddForm({ setData, label }) {
       <InputField settings={info.longText} setter={setLongDescriptionn} />
       <InputField settings={info.shortText} setter={setShortDescription} />
       <InputField settings={info.imgDescription} setter={setImageDescription} />
-      <InputField settings={info.imgURL} setter={setImageURL} />
+      <FileInput setter={setFile} />
       <InputField settings={info.ingredients} setter={editIngredients} />
       <InputField settings={info.URLName} setter={setURLName} />
-      <button type="submit">{label}</button>
-      <Link to={`/category-details/${category}`}>Go back</Link>
+      <button type="submit">{variables.label}</button>
+      <Link to={`/category-details/${variables.category}`}>Go back</Link>
     </form>
   );
 }
