@@ -11,10 +11,15 @@ export default function AddCategory() {
     setShowConfirm(!showConfirm);
   }
 
+  let label = "";
+  Object.keys(data).length === 0
+    ? (label = "Add new category")
+    : (label = "Edit category");
+
   return (
     <div>
       <h3>Please fill in all the following fields:</h3>
-      <CategoryAddForm actions={{ setData, confirmAdd }} dataObject={data} />
+      <CategoryAddForm actions={{ setData, confirmAdd }} label={label} />
       <NewCategory data={data} />
     </div>
   );

@@ -4,13 +4,15 @@ import inputData from "../../data/input-fields.json";
 import { editDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
 import { ingredientsHandler } from "../../scripts/logic/ingredientsHandler";
+import { uploadFile } from "../../scripts/firebase/cloudStorage";
+import FileInput from "./FileInput";
 
 export default function ProductEditForm({ find, category, formHandler }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [longDescription, setlongDescription] = useState("");
   const [shortDescription, setShortDescription] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [file, setFile] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [imageDescription, setImageDescription] = useState("");
   const { editProduct } = useDataProvider();
@@ -22,9 +24,10 @@ export default function ProductEditForm({ find, category, formHandler }) {
     setIngredients(editedArray);
   }
 
-  function onSubmitHandler(event) {
+  async function onSubmitHandler(event) {
     event.preventDefault();
-
+    const filePath = `products/${id}.png`;
+    const imageURL = await uploadFile(file, filePath);
     const inputedData = {
       name: name,
       price: price,
@@ -47,7 +50,7 @@ export default function ProductEditForm({ find, category, formHandler }) {
       <InputField settings={info.ingredients} setter={editIngredients} />
       <InputField settings={info.longText} setter={setlongDescription} />
       <InputField settings={info.shortText} setter={setShortDescription} />
-      <InputField settings={info.imgURL} setter={setImageURL} />
+      <FileInput setter={setFile} />
       <InputField settings={info.imgDescription} setter={setImageDescription} />
       <button>Confirm changes</button>
     </form>

@@ -1,9 +1,8 @@
 import { addDocument } from "../../scripts/firebase/setDocument";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useDataProvider from "../../store/useDataProvider";
 
-export default function NewProduct({ data, id }) {
-  const { category } = useParams();
+export default function NewProduct({ data, id, category }) {
   const navigate = useNavigate();
   const { addProduct } = useDataProvider();
   if (data.length === 0) return null;
@@ -23,15 +22,15 @@ export default function NewProduct({ data, id }) {
       <ul>
         <li>Name: {data.name}</li>
         <li>URL address: {data.URLName}</li>
-        <li>Image Description: {data.imageDescription}</li>
-        <li>Image URL: {data.imageURL}</li>
         <li>
           Ingredients: <ul>{ingredient}</ul>
         </li>
         <li>Long Description: {data.longDescription}</li>
         <li>Price: {data.price}</li>
         <li>Short Description: {data.shortDescription}</li>
+        <li>Image Description: {data.imageDescription}</li>
       </ul>
+      <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
       <button onClick={onClickHandler}>Yes, I am sure</button>
       <button onClick={() => navigate(`/category-details/${category}`)}>
