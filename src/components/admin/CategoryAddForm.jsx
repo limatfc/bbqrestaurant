@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import InputField from "./InputField";
 import data from "../../data/input-fields.json";
 
-export default function CategoryAddForm({ actions, dataObject }) {
+export default function CategoryAddForm({ actions, label }) {
   const { setData, confirmAdd } = actions;
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -27,11 +27,6 @@ export default function CategoryAddForm({ actions, dataObject }) {
     setData(dataObject);
     confirmAdd(true);
   }
-
-  let label = "";
-  Object.keys(dataObject).length === 0
-    ? (label = "Add new category")
-    : (label = "Edit category");
 
   return (
     <form onSubmit={onSubmitHandler}>
