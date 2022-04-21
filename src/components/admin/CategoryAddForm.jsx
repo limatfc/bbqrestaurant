@@ -12,7 +12,6 @@ export default function CategoryAddForm({ actions, dataObject }) {
   const [imageDescription, setImageDescription] = useState("");
   const [imageURL, setImageURL] = useState("");
   const [URLName, setURLName] = useState("");
-
   const info = data.admin.category;
 
   function onSubmitHandler(event) {
@@ -26,7 +25,6 @@ export default function CategoryAddForm({ actions, dataObject }) {
       id: uuidv4(),
     };
     setData(dataObject);
-
     confirmAdd(true);
   }
 
@@ -34,7 +32,7 @@ export default function CategoryAddForm({ actions, dataObject }) {
   Object.keys(dataObject).length === 0
     ? (label = "Add new category")
     : (label = "Edit category");
-  console.log(dataObject);
+
   return (
     <form onSubmit={onSubmitHandler}>
       <InputField settings={info.name} setter={setName} />
