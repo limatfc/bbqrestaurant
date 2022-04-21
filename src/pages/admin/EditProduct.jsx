@@ -11,31 +11,21 @@ export default function EditProduct() {
 
   const find = products.find((item) => item.URLName === product);
 
-  const {
-    imageDescription,
-    imageURL,
-    longDescription,
-    name,
-    price,
-    ingredients,
-    shortDescription,
-  } = find;
-
   function formHandler() {
     setShowForm(!showForm);
   }
-  const ingredient = ingredients.map((item) => <li key={item}>{item}</li>);
+  const ingredient = find.ingredients.map((item) => <li key={item}>{item}</li>);
 
   return (
     <div>
       <h3>Product information:</h3>
       <ul>
-        <li>Name: {name}</li>
-        <li>Price: {price}</li>
-        <li>Product long description: {longDescription}</li>
-        <li>Product short description: {shortDescription}</li>
-        <li>Image Description: {imageDescription}</li>
-        <li>Image URL: {imageURL}</li>
+        <li>Name: {find.name}</li>
+        <li>Price: {find.price}</li>
+        <li>Product long description: {find.longDescription}</li>
+        <li>Product short description: {find.shortDescription}</li>
+        <li>Image Description: {find.imageDescription}</li>
+        <li>Image URL: {find.imageURL}</li>
         <li>
           Ingredients: <ul>{ingredient}</ul>
         </li>
@@ -48,7 +38,7 @@ export default function EditProduct() {
           formHandler={formHandler}
         />
       )}
-      <button onClick={() => navigate(`/edit-category/${category}`)}>
+      <button onClick={() => navigate(`/category-details/${category}`)}>
         Go back
       </button>
     </div>

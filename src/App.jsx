@@ -11,11 +11,11 @@ import Error from "./pages/clients/Error";
 import Product from "./pages/clients/Product";
 import Login from "./pages/admin/Login";
 import AdminHome from "./pages/admin/AdminHome";
-import EditCategory from "./pages/admin/EditCategory";
 import AddCategory from "./pages/admin/AddCategory";
 import EditProduct from "./pages/admin/EditProduct";
 import AddProduct from "./pages/admin/AddProduct";
 import "./styles/Styles.css";
+import CategoryDetails from "./pages/admin/CategoyDetails";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -36,13 +36,20 @@ export default function App() {
         {isLoggedIn && (
           <>
             <Route path="/admin-home" element={<AdminHome />} />
-            <Route path="/edit-category/:category" element={<EditCategory />} />
+
             <Route path="/add-new-category" element={<AddCategory />} />
             <Route
-              path="/edit-category/:category/edit-product/:product"
+              path="/category-details/:category"
+              element={<CategoryDetails />}
+            />
+            <Route
+              path="/category-details/:category/add-new-product"
+              element={<AddProduct />}
+            />
+            <Route
+              path="/category-details/:category/edit-product/:product"
               element={<EditProduct />}
             />
-            <Route path="/:category/add-new-product" element={<AddProduct />} />
           </>
         )}
       </Routes>

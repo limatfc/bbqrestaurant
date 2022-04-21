@@ -16,7 +16,7 @@ export default function CategoryCard({ item }) {
   return (
     <section>
       <h3>Category: {name}</h3>
-      <Link to={`/edit-category/${URLName}`}>
+      <Link to={`/category-details/${URLName}`}>
         <img src={edit} alt="edit icon" />
       </Link>
       <button onClick={onClickHandler}>

@@ -13,7 +13,7 @@ export default function NewProduct({ data, id }) {
   function onClickHandler() {
     addDocument(`menu/${category}/content`, id, data);
     addProduct(id, data);
-    navigate(`/edit-category/${category}`);
+    navigate(`/category-details/${category}`);
   }
 
   return (
@@ -34,7 +34,7 @@ export default function NewProduct({ data, id }) {
       </ul>
       <p>Are you sure you want to add this new category?</p>
       <button onClick={onClickHandler}>Yes, I am sure</button>
-      <button onClick={() => navigate(`/edit-category/${category}`)}>
+      <button onClick={() => navigate(`/category-details/${category}`)}>
         Go back
       </button>
     </div>

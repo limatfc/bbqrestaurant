@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import InputField from "./InputField";
 import { ingredientsHandler } from "../../scripts/logic/ingredientsHandler";
+import inputData from "../../data/input-fields.json";
+import { Link, useParams } from "react-router-dom";
 
-export default function ProductAddForm({ setData, setId }) {
+export default function ProductAddForm({ setData, label }) {
+  const { category } = useParams();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [longDescription, setLongDescriptionn] = useState("");
@@ -12,6 +14,7 @@ export default function ProductAddForm({ setData, setId }) {
   const [imageURL, setImageURL] = useState("");
   const [URLName, setURLName] = useState("");
   const [ingredients, setIngredients] = useState([]);
+  const info = inputData.admin.product;
 
   function editIngredients(item) {
     const editedArray = ingredientsHandler(item);
@@ -31,22 +34,21 @@ export default function ProductAddForm({ setData, setId }) {
       URLName,
       ingredients,
     };
-    const id = uuidv4();
-    setId(id);
     setData(inputedData);
   }
 
   return (
     <form onSubmit={onSubmitHandler}>
-      <InputField label="Name" setter={setName} />
-      <InputField label="Price" setter={setPrice} />
-      <InputField label="Long Description" setter={setLongDescriptionn} />
-      <InputField label="Short Description" setter={setShortDescription} />
-      <InputField label="Image Description" setter={setImageDescription} />
-      <InputField label="Image URL" setter={setImageURL} />
-      <InputField label="Ingredients" setter={editIngredients} />
-      <InputField label="URL address" setter={setURLName} />
-      <button type="submit">Add new product</button>
+      <InputField settings={info.name} setter={setName} />
+      <InputField settings={info.price} setter={setPrice} />
+      <InputField settings={info.longText} setter={setLongDescriptionn} />
+      <InputField settings={info.shortText} setter={setShortDescription} />
+      <InputField settings={info.imgDescription} setter={setImageDescription} />
+      <InputField settings={info.imgURL} setter={setImageURL} />
+      <InputField settings={info.ingredients} setter={editIngredients} />
+      <InputField settings={info.URLName} setter={setURLName} />
+      <button type="submit">{label}</button>
+      <Link to={`/category-details/${category}`}>Go back</Link>
     </form>
   );
 }

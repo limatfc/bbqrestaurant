@@ -15,5 +15,6 @@
   border-style: solid;
 }
 .input-field input::placeholder {
-  color: #837549;
+  color: #b1a36d;
+  opacity: 0.7;
 }
