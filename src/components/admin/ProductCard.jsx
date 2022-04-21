@@ -17,7 +17,7 @@ export default function ProductCard({ item }) {
   return (
     <div>
       <h3>Product: {name}</h3>
-      <Link to={`/edit-category/${category}/edit-product/${URLName}`}>
+      <Link to={`/category-details/${category}/edit-product/${URLName}`}>
         <img src={edit} alt="edit icon" />
       </Link>
       <button onClick={onClickHandler}>

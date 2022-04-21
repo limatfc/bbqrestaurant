@@ -34,7 +34,7 @@ export function DataProvider({ children }) {
     setCategories(result);
   }
 
-  function editProduct(id, inputedData, URLName) {
+  function editProduct(id, inputedData) {
     const result = editState(products, id, inputedData);
     setProducts(result);
   }

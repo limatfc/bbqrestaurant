@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InputField from "./InputField";
+import inputData from "../../data/input-fields.json";
 import { editDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
 import { ingredientsHandler } from "../../scripts/logic/ingredientsHandler";
@@ -14,6 +15,7 @@ export default function ProductEditForm({ find, category, formHandler }) {
   const [imageDescription, setImageDescription] = useState("");
   const { editProduct } = useDataProvider();
   const { id, URLName } = find;
+  const info = inputData.admin.product;
 
   function editIngredients(item) {
     const editedArray = ingredientsHandler(item);
@@ -40,19 +42,13 @@ export default function ProductEditForm({ find, category, formHandler }) {
 
   return (
     <form onSubmit={onSubmitHandler}>
-      <InputField label="Name" setter={setName} />
-      <InputField label="Price" setter={setPrice} />
-      <InputField label="Ingredients" setter={editIngredients} />
-      <InputField
-        label="Product long description"
-        setter={setlongDescription}
-      />
-      <InputField
-        label="Product short description"
-        setter={setShortDescription}
-      />
-      <InputField label="Image URL" setter={setImageURL} />
-      <InputField label="Image description" setter={setImageDescription} />
+      <InputField settings={info.name} setter={setName} />
+      <InputField settings={info.price} setter={setPrice} />
+      <InputField settings={info.ingredients} setter={editIngredients} />
+      <InputField settings={info.longText} setter={setlongDescription} />
+      <InputField settings={info.shortText} setter={setShortDescription} />
+      <InputField settings={info.imgURL} setter={setImageURL} />
+      <InputField settings={info.imgDescription} setter={setImageDescription} />
       <button>Confirm changes</button>
     </form>
   );

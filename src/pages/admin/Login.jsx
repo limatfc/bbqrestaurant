@@ -7,7 +7,7 @@ export default function Login() {
   const { loginHandler } = dataContext;
   const navigate = useNavigate();
 
-  function onSubmitHandler(event) {
+  function onLogin(event) {
     event.preventDefault();
 
     loginHandler();
@@ -15,10 +15,10 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div className="login-wrapper">
       <img src={logo} alt="a cowboy hat besides the words Flaming Cowboy" />
       <h1>Welcome to the administrative page</h1>
-      <form onSubmit={onSubmitHandler}>
+      <form onSubmit={onLogin}>
         <label>
           E-mail
           <input type="text" />

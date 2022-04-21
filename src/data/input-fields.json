@@ -15,5 +15,89 @@
       }
     }
   },
-  "admin": {}
+  "admin": {
+    "category": {
+      "name": {
+        "label": "Category name",
+        "type": "text",
+        "placeholder": "Roasted Chickens",
+        "required": true
+      },
+      "description": {
+        "label": "Description",
+        "type": "text",
+        "placeholder": "This is a great category because...",
+        "required": true
+      },
+      "imgDescription": {
+        "label": "Image Description",
+        "type": "text",
+        "placeholder": "A black and white picture",
+        "required": true
+      },
+      "imgURL": {
+        "label": "Image URL",
+        "type": "text",
+        "placeholder": "http://link",
+        "required": true
+      },
+      "URLName": {
+        "label": "URL address",
+        "type": "text",
+        "placeholder": "roasted-chickens",
+        "required": true
+      }
+    },
+    "product": {
+      "name": {
+        "label": "Product Name",
+        "type": "text",
+        "placeholder": "Herb and mustard chicken",
+        "required": true
+      },
+      "price": {
+        "label": "Product Price",
+        "type": "number",
+        "placeholder": "300",
+        "required": true,
+        "min": 1
+      },
+      "ingredients": {
+        "label": "Ingredients",
+        "type": "text",
+        "placeholder": "mustard, herbs",
+        "required": true
+      },
+      "longText": {
+        "label": "Long Description",
+        "type": "text",
+        "placeholder": "This is a great product because...",
+        "required": true
+      },
+      "shortText": {
+        "label": "Short Description",
+        "type": "text",
+        "placeholder": "Order this product and...",
+        "required": true
+      },
+      "imgURL": {
+        "label": "Image URL",
+        "type": "text",
+        "placeholder": "http://link",
+        "required": true
+      },
+      "imgDescription": {
+        "label": "Image Description",
+        "type": "text",
+        "placeholder": "A black and white picture",
+        "required": true
+      },
+      "URLName": {
+        "label": "URL address",
+        "type": "text",
+        "placeholder": "herb-and-mustard-chicken",
+        "required": true
+      }
+    }
+  }
 }

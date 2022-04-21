@@ -1,5 +1,5 @@
 export default function InputField({ settings, setter }) {
-  const { label, type, placeholder, required } = settings;
+  const { label, type, placeholder, required, min } = settings;
 
   return (
     <label className="input-field">
@@ -9,6 +9,7 @@ export default function InputField({ settings, setter }) {
         required={required}
         placeholder={placeholder}
         onChange={(event) => setter(event.target.value)}
+        min={min}
       />
     </label>
   );

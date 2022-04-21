@@ -6,12 +6,15 @@
 @import "./atoms/button.css";
 @import "./atoms/form.css";
 
-/* screens */
-@import "./clients/screens/Home.css";
-@import "./clients/screens/Menu.css";
-@import "./clients/screens/Category.css";
-@import "./clients/screens/Product.css";
-@import "./clients/screens/Contact.css";
+/* pages */
+@import "./clients/pages/Home.css";
+@import "./clients/pages/Menu.css";
+@import "./clients/pages/Category.css";
+@import "./clients/pages/Product.css";
+@import "./clients/pages/Contact.css";
+@import "./clients/pages/Loading.css";
+@import "./clients/pages/Error.css";
+@import "./admin/pages/Login.css";
 
 /* components */
 @import "./clients/components/CategoryCard.css";
