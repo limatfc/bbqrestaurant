@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import deleteIcon from "../../assets/icons/delete.png";
 import edit from "../../assets/icons/edit.png";
+import { deleteFile } from "../../scripts/firebase/cloudStorage";
 import { deleteDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
 
@@ -12,6 +13,7 @@ export default function ProductCard({ item }) {
   function onClickHandler() {
     deleteDocument(`menu/${category}/content`, id);
     deleteProduct(id);
+    deleteFile(`products/${id}.png`);
   }
 
   return (
