@@ -8,13 +8,14 @@ export default function NavigationBar() {
   const { isLoggedIn } = useDataProvider();
   const [showSideNav, setShowSideNav] = useState(false);
 
-  if (isLoggedIn) return null;
-
   function toggleSideNav() {
     setShowSideNav(!showSideNav);
   }
+
   let screen = "";
   window.innerWidth < 750 ? (screen = "mobile") : (screen = "desktop");
+
+  if (isLoggedIn) return null;
 
   return (
     <div className="navigation-bar">

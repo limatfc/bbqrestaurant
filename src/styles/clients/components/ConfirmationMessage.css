@@ -1,0 +1,48 @@
+.modal-wrapper .backdrop {
+  z-index: 10;
+  background-color: rgb(105, 105, 105, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-wrapper .overlayer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 80%;
+  padding: 24px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-wrapper .overlayer h3 {
+  color: #b1a36d;
+  text-align: center;
+}
+
+.modal-wrapper .overlayer .logo {
+  width: 185px;
+  align-self: end;
+  margin-top: 48px;
+}
+
+.modal-wrapper .overlayer button {
+  align-self: end;
+  margin-bottom: 48px;
+}
+.modal-wrapper .overlayer .close {
+  width: 30px;
+}
+
+@media (min-width: 750px) {
+  .modal-wrapper .overlayer {
+    width: 30%;
+    padding: 48px;
+  }
+}
