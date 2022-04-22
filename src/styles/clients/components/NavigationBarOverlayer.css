@@ -20,23 +20,30 @@
   margin: 24px 16px;
   color: #b1a36d;
   text-decoration: none;
+  background-color: black;
+  border: none;
 }
 
 .overlayer img {
   padding: 16px;
 }
 
-.overlayer button {
-  width: 50px;
-  height: 50px;
+.overlayer .close {
   background-color: black;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 16px;
+  display: block;
+  margin: 48px 0 0 80%;
 }
 
-.overlayer button img {
+.overlayer .close img {
   padding: 0;
+}
+
+.top {
+  margin-top: 60px;
+  width: 100%;
+}
+.bottom {
+  margin-bottom: 60px;
+  width: 100%;
 }

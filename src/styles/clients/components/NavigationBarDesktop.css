@@ -1,21 +1,28 @@
 .desktop {
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-  padding: 24px;
+  display: none;
 }
 
-.desktop div {
-  flex-grow: 1;
-}
+@media (min-width: 750px) {
+  .desktop {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 24px;
+  }
 
-.desktop .link {
-  text-decoration: none;
-  color: #b1a36d;
-  padding: 0 48px;
-  font-size: 25px;
-}
+  .desktop div {
+    flex-grow: 1;
+  }
 
-.desktop img {
-  width: 15%;
+  .desktop .link {
+    text-decoration: none;
+    color: #b1a36d;
+    padding: 0 48px;
+    font-size: 25px;
+  }
+
+  .desktop img {
+    width: 235px;
+    height: 40px;
+  }
 }

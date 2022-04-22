@@ -16,11 +16,11 @@ export default function NavigationBarOverlayer({ toggleSideNav }) {
     <section className="overlayer">
       <div onClick={toggleSideNav} className="background"></div>
       <div className="expanded-wrapper">
-        <button onClick={toggleSideNav}>
+        <button className="close" onClick={toggleSideNav}>
           <img src={close} alt="a golden X icon" />
         </button>
-        <hr />
-        <hr />
+        <hr className="top" />
+        <hr className="bottom" />
         <button className="heading" onClick={() => onNavigate("/")}>
           Home
         </button>
@@ -30,8 +30,8 @@ export default function NavigationBarOverlayer({ toggleSideNav }) {
         <button className="heading" onClick={() => onNavigate("/contact")}>
           Contact
         </button>
-        <hr />
-        <hr />
+        <hr className="top" />
+        <hr className="bottom" />
         <img src={facebook} alt="facebook icon" />
         <img src={instagram} alt="instagram icon" />
         <img src={twitter} alt="twitter icon" />
