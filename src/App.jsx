@@ -14,8 +14,9 @@ import AdminHome from "./pages/admin/AdminHome";
 import AddCategory from "./pages/admin/AddCategory";
 import EditProduct from "./pages/admin/EditProduct";
 import AddProduct from "./pages/admin/AddProduct";
-import "./styles/Styles.css";
 import CategoryDetails from "./pages/admin/CategoyDetails";
+import routeData from "./data/routes.json";
+import "./styles/Styles.css";
 
 export default function App() {
   const dataContext = useDataProvider();
@@ -26,30 +27,20 @@ export default function App() {
     <div className="app">
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu status={status} />} />
-        <Route path="/menu/:category" element={<Category />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/menu/:category/:product" element={<Product />} />
-        <Route path="*" element={<Error />} />
-        <Route path="/login" element={<Login />} />
+        <Route path={routeData.home} element={<Home />} />
+        <Route path={routeData.menu} element={<Menu status={status} />} />
+        <Route path={routeData.category} element={<Category />} />
+        <Route path={routeData.contact} element={<Contact />} />
+        <Route path={routeData.product} element={<Product />} />
+        <Route path={routeData.error} element={<Error />} />
+        <Route path={routeData.login} element={<Login />} />
         {isLoggedIn && (
           <>
-            <Route path="/admin-home" element={<AdminHome />} />
-
-            <Route path="/add-new-category" element={<AddCategory />} />
-            <Route
-              path="/category-details/:category"
-              element={<CategoryDetails />}
-            />
-            <Route
-              path="/category-details/:category/add-new-product"
-              element={<AddProduct />}
-            />
-            <Route
-              path="/category-details/:category/edit-product/:product"
-              element={<EditProduct />}
-            />
+            <Route path={routeData.adminHome} element={<AdminHome />} />
+            <Route path={routeData.addCategory} element={<AddCategory />} />
+            <Route path={routeData.catDetails} element={<CategoryDetails />} />
+            <Route path={routeData.addProduct} element={<AddProduct />} />
+            <Route path={routeData.editProduct} element={<EditProduct />} />
           </>
         )}
       </Routes>
