@@ -1,0 +1,14 @@
+{
+  "home": "/",
+  "menu": "/menu",
+  "category": "/menu/:category",
+  "contact": "/contact",
+  "product": "/menu/:category/:product",
+  "error": "*",
+  "login": "/login",
+  "adminHome": "/admin-home",
+  "addCategory": "/add-new-category",
+  "catDetails": "/category-details/:category",
+  "addProduct": "/category-details/:category/add-new-product",
+  "editProduct": "/category-details/:category/edit-product/:product"
+}
