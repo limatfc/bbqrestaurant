@@ -17,7 +17,7 @@ export default function AddCategory() {
     : (label = "Edit category");
 
   return (
-    <div>
+    <div className="add-category">
       <h3>Please fill in all the following fields:</h3>
       <CategoryAddForm actions={{ setData, confirmAdd }} label={label} />
       <NewCategory data={data} />

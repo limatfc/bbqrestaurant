@@ -15,6 +15,10 @@
 @import "./clients/pages/Loading.css";
 @import "./clients/pages/Error.css";
 @import "./admin/pages/Login.css";
+@import "./admin/pages/Admin-home.css";
+@import "./admin/pages/AddCategory.css";
+@import "./admin/pages/CategoryDetails.css";
+@import "./admin/pages/EditProduct.css";
 
 /* components */
 @import "./clients/components/CategoryCard.css";
@@ -26,3 +30,6 @@
 @import "./clients/components/NavigationBarDesktop.css";
 
 @import "./admin/components/InputField.css";
+@import "./admin/components/CategoryCard.css";
+@import "./admin/components/NewCategory.css";
+@import "./admin/components/Subcategory.css";

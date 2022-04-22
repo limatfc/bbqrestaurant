@@ -13,7 +13,7 @@ export default function AdminHome() {
   ));
 
   return (
-    <div>
+    <div className="admin-home">
       <h3>
         Here are the categories your website is showing. You can add more
         categories, edit the existing ones, or delete everything.
@@ -22,9 +22,12 @@ export default function AdminHome() {
         To access the products, please click on the edit icon of the category
         the chosen products are registered under.
       </p>
-      <button onClick={() => navigate("/add-new-category")}>
-        Add a new category
+      <button
+        className="primary label"
+        onClick={() => navigate("/add-new-category")}
+      >
         <img src={add} alt="a plus sign" />
+        Add a new category
       </button>
       <div>{category}</div>
     </div>

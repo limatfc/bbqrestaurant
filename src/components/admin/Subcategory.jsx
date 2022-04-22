@@ -16,10 +16,13 @@ export default function Subcategory({ category }) {
   if (status === 0) return <Loading />;
 
   return (
-    <div>
-      <Link to={`/category-details/${category}/add-new-product`}>
-        Add a new product
+    <div className="subcategory">
+      <Link
+        className="primary label"
+        to={`/category-details/${category}/add-new-product`}
+      >
         <img src={add} alt="a plus sign" />
+        Add a new product
       </Link>
       {productCard}
       {products.length === 0 && (

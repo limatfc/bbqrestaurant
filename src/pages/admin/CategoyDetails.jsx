@@ -13,35 +13,32 @@ export default function CategoryDetails() {
   const { id, URLName } = findCategory;
 
   const categoryEditForm = (
-    <CategoryEditForm onShowDetails={onShowDetails} data={{ id, URLName }} />
+    <CategoryEditForm setScreen={setScreen} data={{ id, URLName }} />
   );
 
-  function onShowDetails() {
-    setShowScreen(0);
+  function setScreen(number) {
+    setShowScreen(number);
   }
-
-  function onShowForm() {
-    setShowScreen(1);
-  }
-
-  function onShowProducts() {
-    setShowScreen(2);
-  }
-
   return (
-    <div>
+    <div className="category-details">
       <h3>Category information:</h3>
       <ul>
         <li>Name: {findCategory.name}</li>
         <li>Description: {findCategory.description}</li>
-        <li>imageDescription: {findCategory.imageDescription}</li>
+        <li>Image Description: {findCategory.imageDescription}</li>
       </ul>
       <img src={findCategory.imageURL} alt={findCategory.imageDescription} />
-      <button onClick={onShowForm}>Edit category information</button>
-      <button onClick={onShowProducts}>
-        See all the products under the {findCategory.name} category
-      </button>
-      <Link to="/admin-home">Go back</Link>
+      <div className="buttons">
+        <button className="primary label" onClick={() => setScreen(1)}>
+          Edit category information
+        </button>
+        <button className="primary label" onClick={() => setScreen(2)}>
+          See all the products under the {findCategory.name} category
+        </button>
+        <Link className="secundary label" to="/admin-home">
+          Go back
+        </Link>
+      </div>
       {showScreen === 1 && categoryEditForm}
       {showScreen === 2 && <Subcategory category={category} />}
     </div>

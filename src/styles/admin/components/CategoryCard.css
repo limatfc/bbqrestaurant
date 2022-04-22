@@ -1,0 +1,22 @@
+.admin-card {
+  display: flex;
+  align-items: center;
+}
+
+.garbage {
+  width: 40px;
+}
+
+.admin-card button {
+  background-color: transparent;
+  border: none;
+}
+
+.admin-card button:hover {
+  cursor: pointer;
+}
+
+.admin-card img {
+  width: 40px;
+  margin: 8px;
+}

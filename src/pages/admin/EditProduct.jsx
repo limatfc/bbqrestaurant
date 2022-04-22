@@ -17,7 +17,7 @@ export default function EditProduct() {
   const ingredient = find.ingredients.map((item) => <li key={item}>{item}</li>);
 
   return (
-    <div>
+    <div className="edit-product">
       <h3>Product information:</h3>
       <ul>
         <li>Name: {find.name}</li>
@@ -30,7 +30,9 @@ export default function EditProduct() {
         <li>Image Description: {find.imageDescription}</li>
       </ul>
       <img src={find.imageURL} alt={find.imageDescription} />
-      <button onClick={formHandler}>Edit product information</button>
+      {!showForm && (
+        <button onClick={formHandler}>Edit product information</button>
+      )}
       {showForm && (
         <ProductEditForm
           category={category}

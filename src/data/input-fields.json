@@ -98,6 +98,20 @@
         "placeholder": "herb-and-mustard-chicken",
         "required": true
       }
+    },
+    "login": {
+      "name": {
+        "label": "First and last names",
+        "type": "text",
+        "placeholder": "John Doe",
+        "required": false
+      },
+      "email": {
+        "label": "Email address",
+        "type": "text",
+        "placeholder": "johndoe@email.com",
+        "required": false
+      }
     }
   }
 }
