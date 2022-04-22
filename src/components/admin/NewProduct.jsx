@@ -16,7 +16,7 @@ export default function NewProduct({ data, id, category }) {
   }
 
   return (
-    <div>
+    <div className="new-category">
       <p>Here are the details of the product you created: </p>
       <p>Reminder: you cannot change the ID and the URL address later.</p>
       <ul>

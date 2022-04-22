@@ -1,0 +1,13 @@
+.edit-product {
+  margin-top: 48px;
+}
+
+.edit-product img {
+  width: 300px;
+}
+
+.edit-product .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

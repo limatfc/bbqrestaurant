@@ -17,7 +17,7 @@ export default function ProductCard({ item }) {
   }
 
   return (
-    <div>
+    <div className="admin-card">
       <h3>Product: {name}</h3>
       <Link to={`/category-details/${category}/edit-product/${URLName}`}>
         <img src={edit} alt="edit icon" />

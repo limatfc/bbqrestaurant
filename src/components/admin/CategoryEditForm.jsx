@@ -6,7 +6,7 @@ import fieldData from "../../data/input-fields.json";
 import { uploadFile } from "../../scripts/firebase/cloudStorage";
 import FileInput from "./FileInput";
 
-export default function CategoryEditForm({ data, onShowDetails }) {
+export default function CategoryEditForm({ data, setScreen }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [imageDescription, setImageDescription] = useState("");
@@ -31,7 +31,7 @@ export default function CategoryEditForm({ data, onShowDetails }) {
 
     editDocument("menu", data.id, inputedData);
     editCategory(data.id, inputedData);
-    onShowDetails();
+    setScreen(0);
   }
 
   return (
@@ -41,7 +41,7 @@ export default function CategoryEditForm({ data, onShowDetails }) {
       <InputField settings={info.imgDescription} setter={setImageDescription} />
       <FileInput setter={setFile} />
       <button type="submit">Confirm changes</button>
-      <button type="button" onClick={onShowDetails}>
+      <button type="button" onClick={() => setScreen(0)}>
         Cancel
       </button>
     </form>

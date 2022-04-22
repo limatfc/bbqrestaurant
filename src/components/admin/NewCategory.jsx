@@ -15,7 +15,7 @@ export default function NewCategory({ data }) {
   if (Object.keys(data).length === 0) return null;
 
   return (
-    <div>
+    <div className="new-category">
       <p>The category you created is: </p>
       <p>Reminder: you cannot change the URL address later</p>
       <ul>
@@ -27,12 +27,7 @@ export default function NewCategory({ data }) {
       <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
       <button onClick={onClickHandler}>Yes, I am sure</button>
-      <button
-        type="button"
-        onClick={() => {
-          navigate("/admin-home");
-        }}
-      >
+      <button type="button" onClick={() => navigate("/admin-home")}>
         Cancel
       </button>
     </div>

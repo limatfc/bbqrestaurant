@@ -20,7 +20,7 @@ export default function AddProduct() {
     : (label = "Edit Product");
 
   return (
-    <div>
+    <div className="add-category">
       <h3>Please fill in all the following fields:</h3>
       <ProductAddForm setData={setData} variables={{ label, category, id }} />
       <NewProduct data={data} id={id} category={category} />

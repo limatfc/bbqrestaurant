@@ -1,0 +1,16 @@
+.admin-home {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 24px;
+}
+
+.admin-home .primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-home .primary img {
+  width: 25px;
+  margin-right: 8px;
+}

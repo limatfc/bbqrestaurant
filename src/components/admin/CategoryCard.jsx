@@ -16,13 +16,13 @@ export default function CategoryCard({ item }) {
   }
 
   return (
-    <section>
+    <section className="admin-card">
       <h3>Category: {name}</h3>
       <Link to={`/category-details/${URLName}`}>
         <img src={edit} alt="edit icon" />
       </Link>
       <button onClick={onClickHandler}>
-        <img src={deleteIcon} alt="delete icon" />
+        <img className="garbage" src={deleteIcon} alt="delete icon" />
       </button>
     </section>
   );
