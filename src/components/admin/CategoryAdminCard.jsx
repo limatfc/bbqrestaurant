@@ -10,7 +10,7 @@ export default function CategoryAdminCard({ item }) {
   const { deleteCategory } = useDataProvider();
 
   function onDelete() {
-    deleteDocument("menu", id);
+    deleteDocument("menu", URLName);
     deleteCategory(id);
     deleteFile(`categories/${id}.png`);
   }

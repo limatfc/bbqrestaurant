@@ -29,7 +29,7 @@ export default function CategoryEditForm({ data, setScreen }) {
       URLName: data.URLName,
     };
 
-    editDocument("menu", data.id, inputedData);
+    editDocument("menu", data.URLName, inputedData);
     editCategory(data.id, inputedData);
     setScreen(0);
   }
