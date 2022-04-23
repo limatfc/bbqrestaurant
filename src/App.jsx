@@ -6,7 +6,7 @@ import NavigationBar from "./components/clients/NavigationBar";
 import AddCategory from "./pages/admin/AddCategory";
 import AddProduct from "./pages/admin/AddProduct";
 import AdminHome from "./pages/admin/AdminHome";
-import CategoryDetails from "./pages/admin/CategoyDetails";
+import EditCategory from "./pages/admin/EditCategory";
 import EditProduct from "./pages/admin/EditProduct";
 import Login from "./pages/admin/Login";
 import Category from "./pages/clients/Category";
@@ -38,7 +38,7 @@ export default function App() {
           <>
             <Route path={routeData.adminHome} element={<AdminHome />} />
             <Route path={routeData.addCategory} element={<AddCategory />} />
-            <Route path={routeData.catDetails} element={<CategoryDetails />} />
+            <Route path={routeData.catDetails} element={<EditCategory />} />
             <Route path={routeData.addProduct} element={<AddProduct />} />
             <Route path={routeData.editProduct} element={<EditProduct />} />
           </>
