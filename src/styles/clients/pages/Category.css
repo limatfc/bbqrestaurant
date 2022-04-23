@@ -1,3 +1,7 @@
+.category-wrapper {
+  flex-grow: 10;
+}
+
 .category-wrapper img {
   width: 100%;
   height: 170px;
@@ -10,7 +14,7 @@
 }
 
 .category-wrapper p {
-  padding: 0 16px;
+  padding: 0 16px 16px 16px;
   text-align: justify;
 }
 
@@ -50,5 +54,7 @@
 
   .cards-wrapper {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

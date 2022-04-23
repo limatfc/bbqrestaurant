@@ -7,7 +7,7 @@ export default function NewCategory({ data }) {
   const { addCategory } = useDataProvider();
 
   function onClickHandler() {
-    addDocument("menu", data.id, data);
+    addDocument("menu", data.URLName, data);
     addCategory(data.id, data);
     navigate("/admin-home");
   }

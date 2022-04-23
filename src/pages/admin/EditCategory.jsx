@@ -2,9 +2,9 @@ import { useParams, Link } from "react-router-dom";
 import CategoryEditForm from "../../components/admin/CategoryEditForm";
 import useDataProvider from "../../store/useDataProvider";
 import { useState } from "react";
-import Subcategory from "../../components/admin/Subcategory";
+import CategoryDetails from "../../components/admin/CategoryDetails";
 
-export default function CategoryDetails() {
+export default function EditCategory() {
   const { category } = useParams();
   const { categories } = useDataProvider();
   const [showScreen, setShowScreen] = useState(0); //0: show nothing, 1: show form// 2: show products
@@ -40,7 +40,7 @@ export default function CategoryDetails() {
         </Link>
       </div>
       {showScreen === 1 && categoryEditForm}
-      {showScreen === 2 && <Subcategory category={category} />}
+      {showScreen === 2 && <CategoryDetails category={category} />}
     </div>
   );
 }

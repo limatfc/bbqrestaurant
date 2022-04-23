@@ -4,7 +4,7 @@ import data from "../../data/contact.json";
 import { useNavigate } from "react-router-dom";
 import AddressMap from "../../components/clients/AddressMap";
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../../components/clients/Modal";
 
 export default function Contact() {
   const navigate = useNavigate();

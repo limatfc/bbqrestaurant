@@ -24,6 +24,9 @@
   .all-category-cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   .primary {
     margin: 16px auto 24px auto;
