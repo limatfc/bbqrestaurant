@@ -1,6 +1,7 @@
 .product-card-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1200px));
+  grid-auto-flow: row;
   padding: 16px;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -29,6 +30,7 @@
 .cards-wrapper .link {
   text-decoration: none;
   color: black;
+  max-width: 400px;
 }
 
 .product-card-wrapper span {

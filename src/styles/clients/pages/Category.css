@@ -20,11 +20,6 @@
 
 .cards-wrapper {
   padding: 0 16px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 
 .category-wrapper .secundary {
@@ -59,5 +54,7 @@
 
   .cards-wrapper {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

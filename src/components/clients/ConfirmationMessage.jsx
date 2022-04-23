@@ -6,7 +6,7 @@ export default function ConfirmationMessage({ modalHandler }) {
   return (
     <div role="dialog" className="modal-wrapper">
       <div className="backdrop" onClick={modalHandler}></div>
-      <div className="overlayer">
+      <div className="modal-overlayer">
         <button onClick={modalHandler}>
           <img className="close" src={close} alt="a golden X icon" />
         </button>
