@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ProductCard from "./ProductCard";
+import ProductAdminCard from "./ProductAdminCard";
 import useDataProvider from "../../store/useDataProvider";
 import useReadData from "../../hooks/useReadData";
 import Loading from "../../pages/clients/Loading";
@@ -10,7 +10,7 @@ export default function CategoryDetails({ category }) {
   const { status } = useReadData(productsHandler, `menu/${category}/content`);
 
   const productCard = products.map((item) => (
-    <ProductCard item={item} key={item.id} />
+    <ProductAdminCard item={item} key={item.id} />
   ));
 
   if (status === 0) return <Loading />;

@@ -9,7 +9,7 @@ export default function NewProduct({ data, id, category }) {
 
   const ingredient = data.ingredients.map((item) => <li key={item}>{item}</li>);
 
-  function onClickHandler() {
+  function onAdd() {
     addDocument(`menu/${category}/content`, id, data);
     addProduct(id, data);
     navigate(`/category-details/${category}`);
@@ -32,7 +32,7 @@ export default function NewProduct({ data, id, category }) {
       </ul>
       <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
-      <button onClick={onClickHandler}>Yes, I am sure</button>
+      <button onClick={onAdd}>Yes, I am sure</button>
       <button onClick={() => navigate(`/category-details/${category}`)}>
         Go back
       </button>

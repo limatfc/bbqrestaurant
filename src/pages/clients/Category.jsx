@@ -7,8 +7,7 @@ import Error from "./Error";
 
 export default function Category() {
   const { category } = useParams();
-  const dataContext = useDataProvider();
-  const { productsHandler, products, categories } = dataContext;
+  const { productsHandler, products, categories } = useDataProvider();
   const { status } = useReadData(productsHandler, `menu/${category}/content`);
 
   const categoryFind = categories.find((item) => category === item.URLName);

@@ -5,12 +5,12 @@ import { deleteFile } from "../../scripts/firebase/cloudStorage";
 import { deleteDocument } from "../../scripts/firebase/setDocument";
 import useDataProvider from "../../store/useDataProvider";
 
-export default function ProductCard({ item }) {
+export default function ProductAdminCard({ item }) {
   const { category } = useParams();
   const { name, URLName, id } = item;
   const { deleteProduct } = useDataProvider();
 
-  function onClickHandler() {
+  function onDelete() {
     deleteDocument(`menu/${category}/content`, id);
     deleteProduct(id);
     deleteFile(`products/${id}.png`);
@@ -22,7 +22,7 @@ export default function ProductCard({ item }) {
       <Link to={`/category-details/${category}/edit-product/${URLName}`}>
         <img src={edit} alt="edit icon" />
       </Link>
-      <button onClick={onClickHandler}>
+      <button onClick={onDelete}>
         <img src={deleteIcon} alt="an icon of a bin" />
       </button>
     </div>

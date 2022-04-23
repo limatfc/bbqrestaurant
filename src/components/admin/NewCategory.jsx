@@ -6,13 +6,13 @@ export default function NewCategory({ data }) {
   const navigate = useNavigate();
   const { addCategory } = useDataProvider();
 
-  function onClickHandler() {
+  function onAdd() {
     addDocument("menu", data.URLName, data);
     addCategory(data.id, data);
     navigate("/admin-home");
   }
 
-  if (Object.keys(data).length === 0) return null;
+  if (data.length === 0) return null;
 
   return (
     <div className="new-category">
@@ -26,7 +26,7 @@ export default function NewCategory({ data }) {
       </ul>
       <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
-      <button onClick={onClickHandler}>Yes, I am sure</button>
+      <button onClick={onAdd}>Yes, I am sure</button>
       <button type="button" onClick={() => navigate("/admin-home")}>
         Cancel
       </button>

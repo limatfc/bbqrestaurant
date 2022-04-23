@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import CategoryCard from "../../components/admin/CategoryCard";
+import CategoryAdminCard from "../../components/admin/CategoryAdminCard";
 import add from "../../assets/icons/add.png";
 import useDataProvider from "../../store/useDataProvider";
 
 export default function AdminHome() {
-  const dataContext = useDataProvider();
-  const { categories } = dataContext;
+  const { categories } = useDataProvider();
   const navigate = useNavigate();
 
   const category = categories.map((item) => (
-    <CategoryCard item={item} key={item.id} />
+    <CategoryAdminCard item={item} key={item.id} />
   ));
 
   return (
