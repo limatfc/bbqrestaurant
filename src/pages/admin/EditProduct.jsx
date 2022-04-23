@@ -11,10 +11,11 @@ export default function EditProduct() {
 
   const find = products.find((item) => item.URLName === product);
 
+  const ingredient = find.ingredients.map((item) => <li key={item}>{item}</li>);
+
   function formHandler() {
     setShowForm(!showForm);
   }
-  const ingredient = find.ingredients.map((item) => <li key={item}>{item}</li>);
 
   return (
     <div className="edit-product">

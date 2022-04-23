@@ -6,8 +6,7 @@ import Loading from "./Loading";
 
 export default function Product() {
   const { category, product } = useParams();
-  const dataContext = useDataProvider();
-  const { productsHandler, products } = dataContext;
+  const { productsHandler, products } = useDataProvider();
   const { status } = useReadData(productsHandler, `menu/${category}/content/`);
 
   const findProduct = products.find((item) => item.URLName === product);

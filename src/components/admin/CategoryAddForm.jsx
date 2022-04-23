@@ -6,8 +6,7 @@ import data from "../../data/input-fields.json";
 import FileInput from "./FileInput";
 import { uploadFile } from "../../scripts/firebase/cloudStorage";
 
-export default function CategoryAddForm({ actions, label }) {
-  const { setData, confirmAdd } = actions;
+export default function CategoryAddForm({ label, setData }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [URLName, setURLName] = useState("");
@@ -31,7 +30,6 @@ export default function CategoryAddForm({ actions, label }) {
       id: id,
     };
     setData(dataObject);
-    confirmAdd(true);
   }
 
   return (

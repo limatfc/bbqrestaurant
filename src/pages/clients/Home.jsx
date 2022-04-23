@@ -12,12 +12,7 @@ export default function Home() {
         alt="a bar, focusing on the shelves containing bottles and glasses"
       />
       <h1>Welcome to Flaming Cowboy</h1>
-      <button
-        onClick={() => {
-          navigate("/contact");
-        }}
-        className="label primary"
-      >
+      <button onClick={() => navigate("/contact")} className="label primary">
         Book a table
       </button>
     </div>

@@ -5,9 +5,8 @@ import Error from "./Error";
 import Loading from "./Loading";
 
 export default function Menu({ status }) {
-  const dataContext = useDataProvider();
+  const { categories } = useDataProvider();
   const navigate = useNavigate();
-  const { categories } = dataContext;
 
   const categoryCards = categories.map((item, index) => (
     <CategoryCard key={item.id} item={item} index={index} />

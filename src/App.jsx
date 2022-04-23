@@ -19,8 +19,7 @@ import routeData from "./data/routes.json";
 import "./styles/Styles.css";
 
 export default function App() {
-  const dataContext = useDataProvider();
-  const { categoriesHandler, isLoggedIn } = dataContext;
+  const { categoriesHandler, isLoggedIn } = useDataProvider();
   const { status } = useReadData(categoriesHandler, "menu");
 
   return (
