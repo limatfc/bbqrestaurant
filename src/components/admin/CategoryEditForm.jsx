@@ -28,8 +28,8 @@ export default function CategoryEditForm({ data, setScreen }) {
       imageDescription: imageDescription,
       URLName: data.URLName,
     };
-
-    editDocument("menu", data.URLName, inputedData);
+    console.log(data);
+    editDocument("menu", data.URLName, inputedData); //
     editCategory(data.id, inputedData);
     setScreen(0);
   }
