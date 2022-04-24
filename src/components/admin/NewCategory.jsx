@@ -26,8 +26,14 @@ export default function NewCategory({ data }) {
       </ul>
       <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
-      <button onClick={onAdd}>Yes, I am sure</button>
-      <button type="button" onClick={() => navigate("/admin-home")}>
+      <button className="primary label" onClick={onAdd}>
+        Yes, I am sure
+      </button>
+      <button
+        className="secundary label"
+        type="button"
+        onClick={() => navigate("/admin-home")}
+      >
         Cancel
       </button>
     </div>
