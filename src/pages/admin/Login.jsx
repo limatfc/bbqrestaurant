@@ -22,8 +22,8 @@ export default function Login() {
       <img src={logo} alt="a cowboy hat besides the words Flaming Cowboy" />
       <h1>Welcome to the administrative page</h1>
       <form className="form" onSubmit={onLogin}>
-        <InputField settings={info.name} />
-        <InputField settings={info.email} />
+        <InputField settings={info.name} setter={() => {}} />
+        <InputField settings={info.email} setter={() => {}} />
         <button className="primary label" type="submit">
           Enter
         </button>

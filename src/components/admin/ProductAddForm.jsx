@@ -49,7 +49,9 @@ export default function ProductAddForm({ setData, variables }) {
       <FileInput setter={setFile} />
       <InputField settings={info.ingredients} setter={editIngredients} />
       <InputField settings={info.URLName} setter={setURLName} />
-      <button type="submit">{variables.label}</button>
+      <button className="primary label" type="submit">
+        {variables.label}
+      </button>
       <Link to={`/category-details/${variables.category}`}>Go back</Link>
     </form>
   );
