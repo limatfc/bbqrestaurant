@@ -1,5 +1,6 @@
 .menu-wrapper {
   padding: 24px 16px;
+  flex-grow: 10;
 }
 
 .menu-wrapper h2 {

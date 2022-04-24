@@ -32,7 +32,9 @@ export default function EditProduct() {
       </ul>
       <img src={find.imageURL} alt={find.imageDescription} />
       {!showForm && (
-        <button onClick={formHandler}>Edit product information</button>
+        <button className="primary label" onClick={formHandler}>
+          Edit product information
+        </button>
       )}
       {showForm && (
         <ProductEditForm
@@ -41,7 +43,10 @@ export default function EditProduct() {
           formHandler={formHandler}
         />
       )}
-      <button onClick={() => navigate(`/category-details/${category}`)}>
+      <button
+        className="secundary label"
+        onClick={() => navigate(`/category-details/${category}`)}
+      >
         Go back
       </button>
     </div>

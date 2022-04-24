@@ -29,19 +29,25 @@ export default function CategoryEditForm({ data, setScreen }) {
       URLName: data.URLName,
     };
 
-    editDocument("menu", data.id, inputedData);
+    editDocument("menu", data.URLName, inputedData);
     editCategory(data.id, inputedData);
     setScreen(0);
   }
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className="form" onSubmit={onSubmitHandler}>
       <InputField settings={info.name} setter={setName} />
       <InputField settings={info.description} setter={setDescription} />
       <InputField settings={info.imgDescription} setter={setImageDescription} />
       <FileInput setter={setFile} />
-      <button type="submit">Confirm changes</button>
-      <button type="button" onClick={() => setScreen(0)}>
+      <button className="primary label" type="submit">
+        Confirm changes
+      </button>
+      <button
+        className="secundary label"
+        type="button"
+        onClick={() => setScreen(0)}
+      >
         Cancel
       </button>
     </form>

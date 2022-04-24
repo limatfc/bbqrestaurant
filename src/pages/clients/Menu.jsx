@@ -28,6 +28,12 @@ export default function Menu({ status }) {
         well as an extensive buffet, or à la carte service.
       </p>
       <div className="all-category-cards">{categoryCards}</div>
+      {categories.length === 0 && (
+        <p>
+          Ops, it looks like there has been a problem getting the categories.
+          Please check your connection.
+        </p>
+      )}
       <button className="label primary" onClick={onClickHandler}>
         Book a table
       </button>

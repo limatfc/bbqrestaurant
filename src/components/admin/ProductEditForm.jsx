@@ -44,7 +44,7 @@ export default function ProductEditForm({ find, category, formHandler }) {
   }
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className="form" onSubmit={onSubmitHandler}>
       <InputField settings={info.name} setter={setName} />
       <InputField settings={info.price} setter={setPrice} />
       <InputField settings={info.ingredients} setter={editIngredients} />
@@ -52,7 +52,7 @@ export default function ProductEditForm({ find, category, formHandler }) {
       <InputField settings={info.shortText} setter={setShortDescription} />
       <FileInput setter={setFile} />
       <InputField settings={info.imgDescription} setter={setImageDescription} />
-      <button>Confirm changes</button>
+      <button className="primary label">Confirm changes</button>
     </form>
   );
 }

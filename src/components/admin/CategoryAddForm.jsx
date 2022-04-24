@@ -20,7 +20,6 @@ export default function CategoryAddForm({ label, setData }) {
     const id = uuidv4();
     const filePath = `categories/${id}.png`;
     const imageURL = await uploadFile(file, filePath);
-
     const dataObject = {
       name: name,
       description: description,
@@ -33,14 +32,20 @@ export default function CategoryAddForm({ label, setData }) {
   }
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className="form" onSubmit={onSubmitHandler}>
       <InputField settings={info.name} setter={setName} />
       <InputField settings={info.URLName} setter={setURLName} />
       <InputField settings={info.description} setter={setDescription} />
       <FileInput setter={setFile} />
       <InputField settings={info.imgDescription} setter={setImageDescription} />
-      <button type="submit">{label}</button>
-      <button type="button" onClick={() => navigate("/admin-home")}>
+      <button className="primary label" type="submit">
+        {label}
+      </button>
+      <button
+        className="secundary label"
+        type="button"
+        onClick={() => navigate("/admin-home")}
+      >
         Go back
       </button>
     </form>

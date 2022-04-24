@@ -32,8 +32,13 @@ export default function NewProduct({ data, id, category }) {
       </ul>
       <img src={data.imageURL} alt={data.imageDescription} />
       <p>Are you sure you want to add this new category?</p>
-      <button onClick={onAdd}>Yes, I am sure</button>
-      <button onClick={() => navigate(`/category-details/${category}`)}>
+      <button className="primary label" onClick={onAdd}>
+        Yes, I am sure
+      </button>
+      <button
+        className="secundary label"
+        onClick={() => navigate(`/category-details/${category}`)}
+      >
         Go back
       </button>
     </div>
