@@ -26,7 +26,10 @@ export default function Category() {
       <p>{categoryFind.description}</p>
       <div className="cards-wrapper">{productCards}</div>
       {products.length === 0 && (
-        <p>Ops, it looks like there are no products for this category.</p>
+        <p>
+          Ops, it looks like there has been a problem getting the products.
+          Please check your connection.
+        </p>
       )}
       <Link className="label secundary" to="/menu">
         Go back
