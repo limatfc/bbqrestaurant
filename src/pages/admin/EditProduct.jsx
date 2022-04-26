@@ -17,6 +17,7 @@ export default function EditProduct() {
     setShowForm(!showForm);
   }
 
+  // Here you have a lot of <li> tags. I would suggest to create a JSON to create this list dinamically. In the json you can store the key that each bullet point need to render.
   return (
     <div className="edit-product">
       <h3>Product information:</h3>

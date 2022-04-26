@@ -26,6 +26,7 @@ export default function App() {
     <div className="app">
       <NavigationBar />
       <Routes>
+        {/* This could have been divided into 2 components -1 */}
         <Route path={routeData.home} element={<Home />} />
         <Route path={routeData.menu} element={<Menu status={status} />} />
         <Route path={routeData.category} element={<Category />} />

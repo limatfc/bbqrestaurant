@@ -3,6 +3,7 @@ import CategoryAddForm from "../../components/admin/CategoryAddForm";
 
 import NewCategory from "../../components/admin/NewCategory";
 
+// looks great. The CategoryAddForm and NewCategory are a nice first attemp to handle the project complexity.
 export default function AddCategory() {
   const [data, setData] = useState([]);
 

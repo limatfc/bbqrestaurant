@@ -37,6 +37,11 @@ export default function ProductAddForm({ setData, variables }) {
       ingredients,
     };
     setData(inputedData);
+
+    // tip to avoid the vertical object that looks ugly (see, 3 lines instead of 10)
+    const mainData = { name, price, imageURL, shortDescription };
+    const extraData = { longDescription, imageDescription, ingredients };
+    setData({ ...mainData, ...extraData });
   }
 
   return (
